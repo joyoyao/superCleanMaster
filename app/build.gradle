@@ -31,4 +31,9 @@ dependencies {
     compile project(':library')
     compile files('libs/nineoldandroids-2.4.0.jar')
     compile files('libs/umeng-update-v2.5.0.jar')
+    compile files('libs/httpmime-4.1.3.jar')
+    compile files('libs/umeng_social_sdk.jar')
+    compile files('libs/SocialSDK_laiwang_1.jar')
+    compile files('libs/SocialSDK_laiwang_2.jar')
+    compile files('libs/SocialSDK_QQZone_1.jar')
 }

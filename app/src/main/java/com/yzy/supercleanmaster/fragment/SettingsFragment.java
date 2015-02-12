@@ -3,10 +3,14 @@ package com.yzy.supercleanmaster.fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 
+import com.umeng.socialize.bean.RequestType;
+import com.umeng.socialize.controller.UMServiceFactory;
+import com.umeng.socialize.controller.UMSocialService;
 import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateResponse;
@@ -14,6 +18,7 @@ import com.yzy.supercleanmaster.R;
 import com.yzy.supercleanmaster.base.FragmentContainerActivity;
 import com.yzy.supercleanmaster.utils.AppUtil;
 import com.yzy.supercleanmaster.utils.T;
+import com.yzy.supercleanmaster.utils.Utils;
 
 
 public class SettingsFragment extends PreferenceFragment implements Preference.OnPreferenceClickListener {
@@ -26,7 +31,9 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     private Preference createShortCut;
     private Preference pVersion;
     private Preference pVersionDetail;
-
+    private Preference pGithub;// Github
+    private Preference pGrade;// Github
+    private Preference pShare;// Github
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +56,13 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         pVersionDetail = findPreference("pVersionDetail");
         pVersionDetail.setSummary("当前版本：" + AppUtil.getVersion(getActivity()));
         pVersionDetail.setOnPreferenceClickListener(this);
+
+        pGithub = findPreference("pGithub");
+        pGithub.setOnPreferenceClickListener(this);
+        pGrade = findPreference("pGrade");
+        pGrade.setOnPreferenceClickListener(this);
+        pShare = findPreference("pShare");
+        pShare.setOnPreferenceClickListener(this);
     }
 
 
@@ -61,16 +75,30 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
             UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
                 @Override
                 public void onUpdateReturned(int i, UpdateResponse updateResponse) {
-                    if(i!=0){
+                    if (i != 0) {
                         T.showLong(getActivity(), "当前版本为最新版本！");
                     }
 
                 }
             });
-        }else if ("pVersionDetail".equals(preference.getKey())) {
+        } else if ("pVersionDetail".equals(preference.getKey())) {
             VersionFragment.launch(getActivity());
+        } else if ("pGithub".equals(preference.getKey())) {
+            Utils.launchBrowser(getActivity(), "https://github.com/joyoyao/superCleanMaster");
+        }else if ("pGrade".equals(preference.getKey())) {
+            startMarket();
+        }else if ("pShare".equals(preference.getKey())) {
+                shareMyApp();
         }
         return false;
+    }
+
+    private void shareMyApp() {
+
+        UMSocialService mController = UMServiceFactory.getUMSocialService("com.umeng.share", RequestType.SOCIAL);
+        mController.setShareContent("一键清理（开源版）一键清理手机进程，真心不错呀,推荐您使用！.");
+        mController.openShare(getActivity(), false);
+
     }
 
 
@@ -88,5 +116,20 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         getActivity().sendBroadcast(intent);
         T.showLong(getActivity(), "“一键加速”快捷图标已创建");
 
+    }
+
+
+    public  void startMarket() {
+        Uri uri = Uri.parse(String.format("market://details?id=%s", AppUtil.getPackageInfo(getActivity()).packageName));
+        if (Utils.isIntentSafe(getActivity(), uri)) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getActivity().startActivity(intent);
+        }
+        // 没有安装市场
+        else {
+            T.showLong(getActivity(),"无法打开应用市场");
+
+        }
     }
 }

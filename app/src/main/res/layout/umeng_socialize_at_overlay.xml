@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/umeng_socialize_shape_solid_black"
+    android:gravity="center"
+    android:layout_height="60dp"
+    android:layout_width="60dp"
+    android:maxWidth="60dp"
+    android:minWidth="60dp"
+    android:padding="10dp"
+    android:textColor="#ffffffff"
+    android:textSize="50sp"
+    android:textStyle="bold"
+    android:visibility="invisible" />

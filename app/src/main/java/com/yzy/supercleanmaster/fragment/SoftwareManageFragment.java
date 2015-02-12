@@ -56,6 +56,8 @@ public class SoftwareManageFragment extends BaseFragment {
 
     private Method mGetPackageSizeInfoMethod;
 
+    AsyncTask<Void, Integer, List<AppInfo>> task;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,14 +93,20 @@ public class SoftwareManageFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-       fillData();
+        fillData();
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
-     //   fillData();
+        fillData();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        task.cancel(true);
     }
 
     private void fillData() {
@@ -112,7 +120,7 @@ public class SoftwareManageFragment extends BaseFragment {
         }
 
 
-        AsyncTask<Void, Integer, List<AppInfo>> task = new AsyncTask<Void, Integer, List<AppInfo>>() {
+        task = new AsyncTask<Void, Integer, List<AppInfo>>() {
             private int mAppCount = 0;
 
             @Override
@@ -172,13 +180,23 @@ public class SoftwareManageFragment extends BaseFragment {
 
             @Override
             protected void onProgressUpdate(Integer... values) {
-                mProgressBarText.setText(getString(R.string.scanning_m_of_n, values[0], values[1]));
+                try {
+                    mProgressBarText.setText(getString(R.string.scanning_m_of_n, values[0], values[1]));
+                } catch (Exception e) {
+
+                }
+
             }
 
             @Override
             protected void onPreExecute() {
-                showProgressBar(true);
-                mProgressBarText.setText(R.string.scanning);
+                try {
+                    showProgressBar(true);
+                    mProgressBarText.setText(R.string.scanning);
+                } catch (Exception e) {
+
+                }
+
                 //    loading.setVisibility(View.VISIBLE);
                 super.onPreExecute();
             }
@@ -187,29 +205,35 @@ public class SoftwareManageFragment extends BaseFragment {
             protected void onPostExecute(List<AppInfo> result) {
 
                 super.onPostExecute(result);
-                showProgressBar(false);
 
-                userAppInfos = new ArrayList<>();
-                systemAppInfos = new ArrayList<>();
-                long allSize = 0;
-                for (AppInfo a : result) {
-                    if (a.isUserApp()) {
-                        allSize += a.getPkgSize();
-                        userAppInfos.add(a);
-                    } else {
-                        systemAppInfos.add(a);
+
+                try {
+
+                    showProgressBar(false);
+
+                    userAppInfos = new ArrayList<>();
+                    systemAppInfos = new ArrayList<>();
+                    long allSize = 0;
+                    for (AppInfo a : result) {
+                        if (a.isUserApp()) {
+                            allSize += a.getPkgSize();
+                            userAppInfos.add(a);
+                        } else {
+                            systemAppInfos.add(a);
+                        }
                     }
-                }
+                    if (position == 0) {
+                        topText.setText(getString(R.string.software_top_text, userAppInfos.size(), StorageUtil.convertStorage(allSize)));
+                        mAutoStartAdapter = new SoftwareAdapter(mContext, userAppInfos);
+                        listview.setAdapter(mAutoStartAdapter);
 
-                if (position == 0) {
-                    topText.setText(getString(R.string.software_top_text, userAppInfos.size(), StorageUtil.convertStorage(allSize)));
-                    mAutoStartAdapter = new SoftwareAdapter(mContext, userAppInfos);
-                    listview.setAdapter(mAutoStartAdapter);
+                    } else {
 
-                } else {
+                        mAutoStartAdapter = new SoftwareAdapter(mContext, systemAppInfos);
+                        listview.setAdapter(mAutoStartAdapter);
 
-                    mAutoStartAdapter = new SoftwareAdapter(mContext, systemAppInfos);
-                    listview.setAdapter(mAutoStartAdapter);
+                    }
+                } catch (Exception e) {
 
                 }
             }

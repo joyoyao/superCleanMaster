@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/umeng_socialize_bind_bg" >
+
+    <TextView
+        android:id="@+id/umeng_socialize_tipinfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="使用已有账号发表评论"
+        android:textColor="#ffffff" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/umeng_socialize_tipinfo"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp" >
+
+        <Button
+            android:id="@+id/umeng_socialize_bind_qzone"
+            android:layout_width="fill_parent"
+            android:layout_height="38dp"
+            android:background="@drawable/umeng_socialize_button_white_blue"
+            android:text="QQ空间"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/umeng_socialize_bind_tel"
+            android:layout_width="fill_parent"
+            android:layout_height="38dp"
+            android:background="@drawable/umeng_socialize_button_white_blue"
+            android:text="腾讯微博"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/umeng_socialize_bind_sina"
+            android:layout_width="fill_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/umeng_socialize_button_white_blue"
+            android:text="新浪微博"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/umeng_socialize_bind_renren"
+            android:layout_width="fill_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/umeng_socialize_button_white_blue"
+            android:text="人人网"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/umeng_socialize_bind_douban"
+            android:layout_width="fill_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/umeng_socialize_button_white_blue"
+            android:text="豆瓣"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/umeng_socialize_bind_no_tip"
+            android:layout_width="fill_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/umeng_socialize_button_white_blue"
+            android:text="匿名评论 	"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/umeng_socialize_bind_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/umeng_socialize_button_grey_blue"
+            android:text="取消"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

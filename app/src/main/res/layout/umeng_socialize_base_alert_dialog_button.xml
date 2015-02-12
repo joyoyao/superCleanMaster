@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <Button
+        android:id="@+id/umeng_socialize_alert_button"
+        android:layout_width="fill_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/umeng_socialize_button_white_blue"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+</RelativeLayout>

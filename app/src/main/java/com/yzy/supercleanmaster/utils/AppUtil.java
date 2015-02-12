@@ -369,6 +369,16 @@ public class AppUtil {
         return info;
     }
 
+    public static String getPackage(Context context) {
+        try {
+            PackageManager packageManager = context.getPackageManager();
+            PackageInfo packageInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
+            return packageInfo.packageName;
+        } catch (Exception e) {
+        }
+        return "";
+    }
+
     /**
      * 描述：获取运行的进程列表.
      *

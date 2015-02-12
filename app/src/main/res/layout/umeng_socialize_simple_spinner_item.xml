@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"
+    android:padding="4dp" >
+
+    <ImageView
+        android:id="@+id/umeng_socialize_spinner_img"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/umeng_socialize_spinner_txt"
+        android:paddingLeft="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@id/umeng_socialize_spinner_img"
+        android:gravity="center_vertical" />
+
+</RelativeLayout>

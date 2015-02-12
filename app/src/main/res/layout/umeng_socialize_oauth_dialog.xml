@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <include
+        android:id="@+id/umeng_socialize_titlebar"
+        layout="@layout/umeng_socialize_titile_bar" />
+
+    <RelativeLayout
+        android:id="@+id/umeng_socialize_follow"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="#AAAAAA"
+        android:visibility="visible" >
+
+        <CheckBox
+            android:id="@+id/umeng_socialize_follow_check"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:button="@drawable/umeng_socialize_oauth_check"
+            android:checked="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/umeng_socialize_follow_check"
+            android:textSize="16sp"
+            android:text="关注官方微博"
+            android:textColor="#f8f8f8" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/umeng_socialize_follow"
+        android:layout_below="@id/umeng_socialize_titlebar" />
+
+    <RelativeLayout
+        android:id="@+id/progress_bar_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/umeng_socialize_titlebar"
+        android:background="#66000000" >
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

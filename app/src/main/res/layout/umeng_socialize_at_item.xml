@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#EEEEEE"
+    android:orientation="vertical" >
+
+     <TextView
+        android:id="@+id/section"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:background="#EEEEEE"
+        android:textColor="@color/umeng_socialize_text_friends_list" /> 
+
+    <RelativeLayout
+        style="@style/umeng_socialize_list_item"
+         >
+
+        <ImageView
+            android:id="@+id/umeng_socialize_avatar_imv"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/umeng_socialize_default_avatar" />
+
+        <TextView
+            android:id="@+id/umeng_socialize_text_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/umeng_socialize_avatar_imv"
+            android:textColor="@color/umeng_socialize_list_item_textcolor"
+            android:maxLength="10"
+            android:ellipsize="end"
+            android:paddingRight="4dp"
+            android:textSize="13sp" />
+    </RelativeLayout>
+</LinearLayout>

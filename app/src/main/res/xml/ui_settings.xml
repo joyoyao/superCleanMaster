@@ -16,7 +16,7 @@
 
     <PreferenceCategory android:title="@string/category_other">
         <Preference
-            android:key="pShareAisen"
+            android:key="pShare"
             android:title="@string/settings_share" />
 
         <Preference
@@ -28,6 +28,11 @@
         <Preference
             android:key="pVersion"
             android:title="@string/settings_version_update" />
+        <Preference
+            android:key="pGithub"
+            android:title="Github"
+            android:summary="github.com/joyoyao/superCleanMaster"
+            />
 
         <Preference
             android:key="pAbout"

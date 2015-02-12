@@ -1,0 +1,6 @@
+<resources>
+
+    <string name="umeng_socialize_text_laiwang_key">来往</string>
+    <string name="umeng_socialize_text_laiwang_dynamic_key">来往动态</string>
+	<string name="umeng_socialize_laiwang_default_content">友盟社会化组件（SDK）让移动应用快速整合社交分享功能</string>
+</resources>

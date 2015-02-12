@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:textColor="@color/umeng_socialize_text_friends_list"
+    android:background="#eeeeee"
+    android:paddingLeft="8dp"
+    android:text="header"
+    android:id="@+id/header" />

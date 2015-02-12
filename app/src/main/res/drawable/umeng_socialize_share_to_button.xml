@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!--     <item android:drawable="@color/umeng_socialize_colors_blue" android:state_pressed="true" android:state_window_focused="true"/>
+    <item android:drawable="@color/umeng_socialize_colors_blue" android:state_focused="true"/> -->
+</selector>
