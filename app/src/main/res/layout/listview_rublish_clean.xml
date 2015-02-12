@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_background_white"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="@android:dimen/app_icon_size"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:contentDescription="@null"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textAlignment="viewStart"
+            android:layout_gravity="start"></TextView>
+
+        <TextView
+            android:id="@+id/app_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAlignment="viewStart"
+            android:layout_gravity="start"></TextView>
+
+    </LinearLayout>
+</LinearLayout>
+

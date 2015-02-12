@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wave="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="100dip"
+    android:visibility="gone"
+    android:background="@android:color/holo_blue_dark"
+    android:orientation="vertical" >
+
+    <com.john.waveview.WaveView
+        android:id="@+id/wave_view"
+        android:layout_width="100dip"
+        android:layout_height="match_parent"
+        android:background="@color/title_bg"
+        wave:above_wave_color="@android:color/white"
+        wave:blow_wave_color="@android:color/white"
+        wave:progress="50"
+        wave:wave_height="little"
+        wave:wave_hz="normal"
+        wave:wave_length="middle" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/clear_mem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+</FrameLayout>

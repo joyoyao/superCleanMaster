@@ -1,0 +1,101 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8ffffff"
+    tools:context=".NavigationDrawerFragment_">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/userInfo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/navigation_my_bg" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/drawer_selector_bg"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/drawer_selector_0"
+                    android:drawablePadding="15dp"
+                    android:paddingEnd="0dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="0dp"
+                    android:text="首页"
+                    android:textColor="@drawable/drawer_selector_font"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/drawer_selector_bg"
+                android:button="@null"
+                android:drawableLeft="@drawable/drawer_selector_4"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="17dp"
+                android:paddingRight="0dp"
+                android:text="轻松一下"
+                android:textColor="@drawable/drawer_selector_font"
+                android:textSize="17sp" />
+
+            <RadioButton
+                android:id="@+id/radio2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/drawer_selector_bg"
+                android:button="@null"
+                android:drawableLeft="@drawable/drawer_selector_4"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="17dp"
+                android:paddingRight="0dp"
+                android:text="设置"
+                android:textColor="@drawable/drawer_selector_font"
+                android:textSize="17sp" />
+
+
+            <RadioButton
+                android:id="@+id/radio3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/drawer_selector_bg"
+                android:button="@null"
+                android:drawableLeft="@drawable/drawer_selector_4"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="17dp"
+                android:paddingRight="0dp"
+                android:text="关于"
+                android:textColor="@drawable/drawer_selector_font"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

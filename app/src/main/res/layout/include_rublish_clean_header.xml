@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="100dip"
+    android:background="@android:color/holo_blue_dark"
+    android:visibility="gone"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/wave_view"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/white"
+        android:background="@color/title_bg" />
+
+
+</RelativeLayout>

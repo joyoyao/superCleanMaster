@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/card_normal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/card1"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+
+            <com.yzy.supercleanmaster.views.ItemCardView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card:card_name="内存加速"
+                card:card_image="@drawable/card_icon_speedup" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1.0px"
+            android:layout_height="fill_parent"
+            android:background="#19000000" />
+
+        <RelativeLayout
+            android:id="@+id/card2"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+
+
+            <com.yzy.supercleanmaster.views.ItemCardView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card:card_name="垃圾清理"
+                card:card_image="@drawable/card_icon_trash" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="#19000000" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/card3"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+
+
+            <com.yzy.supercleanmaster.views.ItemCardView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card:card_name="自启管理"
+                card:card_image="@drawable/card_icon_autorun" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1.0px"
+            android:layout_height="fill_parent"
+            android:background="#19000000" />
+
+        <RelativeLayout
+            android:id="@+id/card4"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+
+
+            <com.yzy.supercleanmaster.views.ItemCardView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card:card_name="@string/app_software_manage"
+                card:card_image="@drawable/card_icon_media" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="#19000000" />
+
+</LinearLayout>

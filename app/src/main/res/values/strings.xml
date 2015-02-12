@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">一键清理  开源版</string>
+    <string name="short_cut_name">一键加速</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="app_memory_clean">内存加速</string>
+    <string name="app_rublish_clean">垃圾清理</string>
+    <string name="app_autostart_manage">自启管理</string>
+    <string name="app_software_manage">软件管理</string>
+    <string name="cleaned">清理垃圾 (<xliff:g id="memory">%1$s</xliff:g>)</string>
+    <string name="empty_cache">缓存为空.</string>
+    <string name="scanning">扫描中…</string>
+    <string name="scanning_m_of_n">扫描中 %1$d/%2$d</string>
+    <string name="software_top_text">已安装%1$s款软件,占有存储空间%2$s</string>
+
+
+    <string name="category_other">其他</string>
+    <string name="category_def">常规设置</string>
+    <string name="settings_basic">基本设置</string>
+    <string name="category_advanced">高级设置</string>
+    <string name="settings_about">关于</string>
+    <string name="settings_version_update">检查更新</string>
+    <string name="settings_grade">给我好评</string>
+    <string name="settings_share">推荐给好友</string>
+
+    <string name="title_settings">设置</string>
+</resources>

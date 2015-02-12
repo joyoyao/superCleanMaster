@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/entrance3" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/entrance_bottom_bg" />
+
+    <LinearLayout
+        android:layout_marginBottom="18dp"
+        android:layout_above="@+id/title"
+        android:layout_width="wrap_content"
+
+      android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/small_icon" />
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="一键清理 开源版"
+            android:textColor="#b3ffffff"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="17dp"
+        android:gravity="center_horizontal"
+        android:text="春光乍泄 © 堂堂炒栗子的"
+        android:textColor="#b3ffffff"
+        android:textSize="9sp" />
+
+</RelativeLayout>

@@ -1,0 +1,131 @@
+<resources>
+
+    <declare-styleable name="ArcProgress">
+        <attr name="arc_progress" format="integer" />
+        <attr name="arc_angle" format="float" />
+        <attr name="arc_stroke_width" format="dimension" />
+        <attr name="arc_max" format="integer" />
+        <attr name="arc_unfinished_color" format="color" />
+        <attr name="arc_finished_color" format="color" />
+        <attr name="arc_text_size" format="dimension" />
+        <attr name="arc_text_color" format="color" />
+        <attr name="arc_suffix_text" format="string" />
+        <attr name="arc_suffix_text_size" format="dimension" />
+        <attr name="arc_suffix_text_padding" format="dimension" />
+        <attr name="arc_bottom_text" format="string" />
+        <attr name="arc_bottom_text_size" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="WaveView">
+        <attr name="above_wave_color" format="color" />
+        <attr name="blow_wave_color" format="color" />
+        <attr name="progress" format="integer" />
+        <attr name="wave_length" format="enum">
+            <enum name="large" value="1" />
+            <enum name="middle" value="2" />
+            <enum name="little" value="3" />
+        </attr>
+        <attr name="wave_height" format="enum">
+            <enum name="large" value="1" />
+            <enum name="middle" value="2" />
+            <enum name="little" value="3" />
+        </attr>
+        <attr name="wave_hz" format="enum">
+            <enum name="fast" value="1" />
+            <enum name="normal" value="2" />
+            <enum name="slow" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="Themes">
+        <attr name="waveViewStyle" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="RoundCornerProgress">
+        <attr name="progress1" format="integer" />
+        <attr name="backgroundPadding" format="dimension" />
+        <attr name="backgroundRadius" format="dimension" />
+        <attr name="max" format="integer" />
+        <attr name="iconSrc" format="integer" />
+        <attr name="iconSize" format="dimension" />
+        <attr name="iconPadding" format="dimension" />
+        <attr name="headerColor" format="color" />
+        <attr name="progressColor" format="color" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="textProgressColor" format="color" />
+        <attr name="textProgress" format="string" />
+        <attr name="textProgressUnit" format="string" />
+        <attr name="textProgressSize" format="dimension" />
+        <attr name="textProgressWidth" format="dimension" />
+        <attr name="textProgressPadding" format="dimension" />
+        <attr name="autoTextChange" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SlidingTab">
+        <attr name="pstsIndicatorColorWe" format="color" />
+        <attr name="pstsUnderlineColorWe" format="color" />
+        <attr name="pstsDividerColorWe" format="color" />
+        <attr name="pstsIndicatorHeightWe" format="dimension" />
+        <attr name="pstsUnderlineHeightWe" format="dimension" />
+        <attr name="pstsDividerPaddingWe" format="dimension" />
+        <attr name="pstsTabPaddingLeftRightWe" format="dimension" />
+        <attr name="pstsScrollOffsetWe" format="dimension" />
+        <attr name="pstsTabBackgroundWe" format="reference" />
+        <attr name="pstsShouldExpandWe" format="boolean" />
+        <attr name="pstsTextAllCapsWe" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="CounterView">
+        <attr name="prefix" format="string" />
+        <attr name="suffix" format="string" />
+        <attr name="timeInterval" format="float" />
+        <attr name="incrementValue" format="float" />
+        <attr name="startValue" format="float" />
+        <attr name="endValue" format="float" />
+        <attr name="formatText" format="boolean" />
+        <attr name="autoStart" format="boolean" />
+        <attr name="type" format="enum">
+            <enum name="integer" value="0" />
+            <enum name="decimal" value="1" />
+            <enum name="both" value="2" />
+        </attr>
+        <attr name="android:text" />
+    </declare-styleable>
+
+    <declare-styleable name="RippleView">
+        <attr name="rv_alpha" format="integer" />
+        <attr name="rv_framerate" format="integer" />
+        <attr name="rv_rippleDuration" format="integer" />
+        <attr name="rv_zoomDuration" format="integer" />
+        <attr name="rv_color" format="color" />
+        <attr name="rv_centered" format="boolean" />
+        <attr name="rv_type" format="enum">
+            <enum name="simpleRipple" value="0" />
+            <enum name="doubleRipple" value="1" />
+            <enum name="rectangle" value="2" />
+        </attr>
+        <attr name="rv_ripplePadding" format="dimension" />
+        <attr name="rv_zoom" format="boolean" />
+        <attr name="rv_zoomScale" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeBackLayout">
+        <attr name="edge_size" format="dimension" />
+        <attr name="edge_flag">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="bottom" value="2" />
+            <enum name="all" value="3" />
+        </attr>
+        <attr name="shadow_left" format="reference" />
+        <attr name="shadow_right" format="reference" />
+        <attr name="shadow_bottom" format="reference" />
+    </declare-styleable>
+    <attr name="SwipeBackLayoutStyle" format="reference" />
+    <declare-styleable name="ItemCardView">
+        <attr name="card_name" format="string" />
+        <attr name="card_image" format="reference" />
+
+    </declare-styleable>
+
+
+</resources>

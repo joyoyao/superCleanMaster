@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelog bulletedList="true">
+
+
+    <changelogversion versionName="1.0" changeDate="2015-2-14">
+        <changelogtext>项目V1.0正式发布！</changelogtext>
+        <changelogtext>代码正式开源！</changelogtext>
+    </changelogversion>
+</changelog>

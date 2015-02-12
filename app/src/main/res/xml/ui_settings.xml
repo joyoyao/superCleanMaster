@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/category_def">
+        <Preference
+            android:key="createShortCut"
+            android:title="创建&quot;一键加速&quot;快捷方式" />
+        <SwitchPreference
+            android:key="powerClear"
+            android:title="强力清理"
+            android:enabled="false"
+            android:summary="此功能需要root权限" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="@string/category_other">
+        <Preference
+            android:key="pShareAisen"
+            android:title="@string/settings_share" />
+
+        <Preference
+            android:key="pGrade"
+            android:title="@string/settings_grade" />
+        <Preference
+            android:key="pVersionDetail"
+            android:title="版本信息" />
+        <Preference
+            android:key="pVersion"
+            android:title="@string/settings_version_update" />
+
+        <Preference
+            android:key="pAbout"
+            android:title="@string/settings_about" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

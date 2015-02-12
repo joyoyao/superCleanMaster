@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gray_drawable"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.4">
+
+        <com.yzy.supercleanmaster.widget.circleprogress.ArcProgress
+            android:id="@+id/arc_store"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dip"
+            custom:arc_bottom_text="存储空间"
+            custom:arc_bottom_text_size="18dip"
+            custom:arc_progress="10"
+            custom:arc_stroke_width="8dip"
+            custom:arc_text_color="#ffffff"
+            custom:arc_text_size="32dip" />
+
+        <com.yzy.supercleanmaster.widget.circleprogress.ArcProgress
+            android:id="@+id/arc_process"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="50dip"
+            custom:arc_bottom_text="内存"
+            custom:arc_bottom_text_size="14dip"
+            custom:arc_progress="10"
+            custom:arc_stroke_width="6dip"
+            custom:arc_text_color="#ffffff"
+            custom:arc_text_size="26dip" />
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#3762ad">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="dddd" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+
+        <include layout="@layout/include_main_card" />
+    </RelativeLayout>
+
+</LinearLayout>

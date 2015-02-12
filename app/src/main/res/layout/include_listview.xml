@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fastScrollEnabled="true"
+    android:focusable="true"
+    android:listSelector="@android:color/transparent"
+    android:scrollbars="none"
+
+    android:clipToPadding="false"
+    android:divider="@null"
+    android:dividerHeight="8dp"
+    android:fadingEdge="none"
+    android:fitsSystemWindows="true"
+    android:padding="12dp"
+    android:scrollbarStyle="outsideOverlay"
+    tools:ignore="overdraw" />

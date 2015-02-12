@@ -1,0 +1,75 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
+
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+
+
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="ActionbarNoIcon" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="MyActionBar">
+        <item name="android:displayOptions">showTitle</item>
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/gray_drawable</item>
+    </style>
+
+    <style name="TranslateThemeFull" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@drawable/transparent</item>
+    </style>
+
+    <style name="MyAppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:homeAsUpIndicator">@drawable/ic_back</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+
+    </style>
+
+
+    <style name="MyTranslucentAppTheme" parent="MyAppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="ActionBar" parent="android:Widget.ActionBar">
+        <item name="android:background">@drawable/gray_drawable</item>
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="android:titleTextStyle">@style/ActionBar.TitleText</item>
+
+    </style>
+
+    <style name="ActionBar.TitleText" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    
+    
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:state_enabled="true" android:drawable="@drawable/sysclear_card_btn_a_pressed" />
+    <item android:state_enabled="true" android:state_pressed="true" android:drawable="@drawable/sysclear_card_btn_a_pressed" />
+    <item android:state_enabled="false" android:drawable="@drawable/sysclear_card_btn_a_unenble" />
+    <item android:drawable="@drawable/sysclear_card_btn_a_normal" />
+</selector>

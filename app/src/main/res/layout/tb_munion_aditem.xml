@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tb_munion_item_selector"
+    android:layout_weight="1">
+
+    <ImageView
+        android:id="@+id/ad_image"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/tb_munion_icon"/>
+</FrameLayout>

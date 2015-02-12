@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="#fff"
+    android:orientation="vertical">
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#008bea" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="精品应用推荐下载"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:id="@+id/promoter_frame"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"></LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/progress_frame"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/status_msg"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="18sp"/>
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </FrameLayout>
+
+
+</LinearLayout>
