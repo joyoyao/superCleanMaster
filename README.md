@@ -10,8 +10,13 @@
 * 缓存清理
 * 自启管理
 * 软件管理
-* 设备信息
+* 设备信息<br>
 ## 应用截图
+<br>
 ![](https://github.com/joyoyao/superCleanMaster/blob/master/screenshot/home.jpg)  
+![](https://github.com/joyoyao/superCleanMaster/blob/master/screenshot/1.jpg) 
+![](https://github.com/joyoyao/superCleanMaster/blob/master/screenshot/2.jpg) 
+![](https://github.com/joyoyao/superCleanMaster/blob/master/screenshot/3.jpg) 
+
 
 
