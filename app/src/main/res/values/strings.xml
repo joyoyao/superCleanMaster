@@ -30,4 +30,10 @@
     <string name="settings_share">推荐给好友</string>
 
     <string name="title_settings">设置</string>
+     <string name="app_information">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;\
+        亲！么么！一键清理 开源版 。高效、快速、准确的清理手机垃圾，提升手机运行速度。\
+         源代码开源，保证安全
+        由于时间仓促，错误与疏忽之处在所难免,\
+        如果各位亲能给出宝贵的建议与指点,那将是极好的哦！么么哒！</string>
+    <string name="all_rights_reserved">Copyright © 2012-2015 zaiyong. All Rights Reserved.</string>
 </resources>

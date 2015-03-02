@@ -125,23 +125,22 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rublish_clean);
         getActionBar().setDisplayHomeAsUpEnabled(true);
-      //     applyKitKatTranslucency();
+        //     applyKitKatTranslucency();
 
 //        StikkyHeaderBuilder.stickTo(mListView).setHeader(header)
 //                .minHeightHeaderPixel(0).build();
         res = getResources();
-        bindService(new Intent(mContext, CleanerService.class),
-                mServiceConnection, Context.BIND_AUTO_CREATE);
+
 
         int footerHeight = mContext.getResources().getDimensionPixelSize(R.dimen.footer_height);
 
         mListView.setEmptyView(mEmptyView);
-
         rublishMemoryAdapter = new RublishMemoryAdapter(mContext, mCacheListItem);
         mListView.setAdapter(rublishMemoryAdapter);
         mListView.setOnItemClickListener(rublishMemoryAdapter);
         mListView.setOnScrollListener(new QuickReturnListViewOnScrollListener(QuickReturnType.FOOTER, null, 0, bottom_lin, footerHeight));
-
+        bindService(new Intent(mContext, CleanerService.class),
+                mServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
     @Override
@@ -173,12 +172,10 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
 
     @Override
     public void onScanCompleted(Context context, List<CacheListItem> apps) {
-
+        showProgressBar(false);
         mCacheListItem.clear();
-
         mCacheListItem.addAll(apps);
         rublishMemoryAdapter.notifyDataSetChanged();
-        showProgressBar(false);
         header.setVisibility(View.GONE);
         if (apps.size() > 0) {
             header.setVisibility(View.VISIBLE);
@@ -195,7 +192,7 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
             textCounter.setIncrement(5f); // the amount the number increments at each time interval
             textCounter.setTimeInterval(50); // the time interval (ms) at which the text changes
             sufix.setText(mStorageSize.suffix);
-          //  textCounter.setSuffix(mStorageSize.suffix);
+            //  textCounter.setSuffix(mStorageSize.suffix);
             textCounter.start();
         } else {
             header.setVisibility(View.GONE);

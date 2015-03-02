@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:weather="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="8dip"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="24dip"
+            android:minWidth="24dip"
+            android:padding="12dip"
+            android:src="@drawable/setting_top_back" />
+
+        <TextView
+            android:id="@+id/city_title"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            style="@style/Label.Shadow"
+            android:text="关于"
+            android:textSize="20.0sp" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="none"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip">
+
+            <ImageView
+                android:id="@+id/brand"
+                android:layout_width="70.0dip"
+                android:layout_height="70.0dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30.0dip"
+                android:contentDescription="@null"
+                android:onClick="showChangeLog"
+                android:src="@drawable/app_icon" />
+
+            <TextView
+                android:id="@+id/subVersion"
+                style="@style/Label.Shadow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3.0dip"
+                android:includeFontPadding="false"
+                android:text="V1.05" />
+
+            <TextView
+                android:id="@+id/app_information"
+                style="@style/Label.Shadow.Medium"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subVersion"
+                android:layout_gravity="center"
+                android:layout_marginTop="20.0dip"
+                android:duplicateParentState="true"
+                android:linksClickable="true"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip"
+                android:singleLine="false"
+                android:text="@string/app_information"
+                android:textSize="15sp" />
+
+
+            <LinearLayout
+                android:id="@+id/upgradeLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:layout_below="@id/app_information"
+                android:layout_marginTop="20.0dip"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/Label.Medium"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:duplicateParentState="true"
+                    android:gravity="center"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:singleLine="true"
+                    android:text="作者:"
+                    android:textSize="15sp" />
+
+                <TextView
+                    style="@style/Label.Medium"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:duplicateParentState="true"
+                    android:gravity="center"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:singleLine="true"
+                    android:text="joyoyao"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:layout_below="@id/upgradeLayout"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    style="@style/Label.Medium"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:duplicateParentState="true"
+                    android:gravity="center"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:singleLine="true"
+                    android:text="Github"
+                    android:textSize="15sp" />
+
+                <TextView
+                    style="@style/Label.Medium"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:duplicateParentState="true"
+                    android:gravity="center"
+                    android:linksClickable="true"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:singleLine="true"
+                    android:text="github.com/joyoyao/superCleanMaster"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/copyright"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20.0dip"
+                android:gravity="bottom|center"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:text="@string/all_rights_reserved"
+                android:textColor="#ffbbbbbb"
+                android:textSize="12.0sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

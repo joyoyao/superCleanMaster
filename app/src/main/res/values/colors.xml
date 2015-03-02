@@ -9,6 +9,8 @@
 
     <drawable name="transparent">#00000000</drawable>
     <color name="white">#FFFFFF</color>
+
+    <color name="text_color">#414141</color>
     <color name="ldrawer_color">#FFFFFF</color>
     <color name="transparent">#00000000</color>
 
@@ -28,5 +30,16 @@
 
     <color name="background_tab_pressed">#ffffff</color>
     <color name="green_6a">#FF2c5aa9</color>
+
+    <color name="gplus_color_1">#3e802f</color>
+    <color name="gplus_color_2">#f4b400</color>
+    <color name="gplus_color_3">#427fed</color>
+    <color name="gplus_color_4">#b23424</color>
+    <integer-array name="gplus_colors">
+        <item>@color/gplus_color_1</item>
+        <item>@color/gplus_color_2</item>
+        <item>@color/gplus_color_3</item>
+        <item>@color/gplus_color_4</item>
+    </integer-array>
 
 </resources>

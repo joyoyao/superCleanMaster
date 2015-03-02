@@ -10,34 +10,56 @@
         android:layout_height="0dip"
         android:layout_weight="1.4">
 
-        <com.yzy.supercleanmaster.widget.circleprogress.ArcProgress
-            android:id="@+id/arc_store"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dip"
-            custom:arc_bottom_text="存储空间"
-            custom:arc_bottom_text_size="18dip"
-            custom:arc_progress="10"
-            custom:arc_stroke_width="8dip"
-            custom:arc_text_color="#ffffff"
-            custom:arc_text_size="32dip" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="200dip">
 
-        <com.yzy.supercleanmaster.widget.circleprogress.ArcProgress
-            android:id="@+id/arc_process"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="15dip"
-            android:layout_marginTop="50dip"
-            custom:arc_bottom_text="内存"
-            custom:arc_bottom_text_size="14dip"
-            custom:arc_progress="10"
-            custom:arc_stroke_width="6dip"
-            custom:arc_text_color="#ffffff"
-            custom:arc_text_size="26dip" />
+            <RelativeLayout
+                android:id="@+id/arc_left"
+                android:layout_height="200dip"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true">
+
+                <com.yzy.supercleanmaster.widget.circleprogress.ArcProgress
+                    android:id="@+id/arc_store"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    custom:arc_bottom_text="存储空间"
+                    custom:arc_bottom_text_size="18dip"
+                    custom:arc_progress="10"
+                    custom:arc_stroke_width="8dip"
+                    custom:arc_text_color="#ffffff"
+                    custom:arc_text_size="32dip" />
+
+                <TextView
+                    android:id="@+id/capacity"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="12dip"
+                    android:text="20/30"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="55dip" />
+            </RelativeLayout>
+
+            <com.yzy.supercleanmaster.widget.circleprogress.ArcProgress
+                android:id="@+id/arc_process"
+                android:layout_width="100dp"
+                android:layout_marginLeft="15dip"
+                android:layout_toRightOf="@+id/arc_left"
+                android:layout_height="100dp"
+                custom:arc_bottom_text="内存"
+                android:layout_marginBottom="25dip"
+                android:layout_alignParentBottom="true"
+                custom:arc_bottom_text_size="14dip"
+                custom:arc_progress="10"
+                custom:arc_stroke_width="6dip"
+                custom:arc_text_color="#ffffff"
+                custom:arc_text_size="26dip" />
+        </RelativeLayout>
+
 
         <RelativeLayout
             android:visibility="gone"

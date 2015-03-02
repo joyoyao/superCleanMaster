@@ -92,8 +92,6 @@ public class SoftwareManageFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        fillData();
     }
 
     @Override

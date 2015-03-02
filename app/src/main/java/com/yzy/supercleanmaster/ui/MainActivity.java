@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-import android.view.Menu;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -17,12 +17,17 @@ import android.widget.FrameLayout;
 import com.ikimuhendis.ldrawer.ActionBarDrawerToggle;
 import com.ikimuhendis.ldrawer.DrawerArrowDrawable;
 import com.yzy.supercleanmaster.R;
+import com.yzy.supercleanmaster.base.ActivityTack;
 import com.yzy.supercleanmaster.base.BaseActivity;
 import com.yzy.supercleanmaster.fragment.MainFragment;
 import com.yzy.supercleanmaster.fragment.NavigationDrawerFragment;
+import com.yzy.supercleanmaster.fragment.RelaxFragment;
 import com.yzy.supercleanmaster.fragment.SettingsFragment;
 import com.yzy.supercleanmaster.utils.SystemBarTintManager;
+import com.yzy.supercleanmaster.utils.T;
 import com.yzy.supercleanmaster.utils.UIElementsHelper;
+
+import java.util.Date;
 
 import butterknife.InjectView;
 
@@ -45,27 +50,24 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     private View mFragmentContainerView;
 
     MainFragment mMainFragment;
-
+    RelaxFragment mRelaxFragment;
+    public static final long TWO_SECOND = 2 * 1000;
+    long preTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        getSupportFragmentManager().beginTransaction()
-//                .add(R.id.container, new MainFragment()).commit();
+
         mFragmentContainerView = (View) findViewById(R.id.navigation_drawer);
         mTitle = getTitle();
-        //	applyKitKatTranslucency();
+       applyKitKatTranslucency();
 
         onNavigationDrawerItemSelected(0);
         initDrawer();
-        initFrament();
+
 
     }
 
-    private void initFrament() {
-        // TODO Auto-generated method stub
-
-    }
 
     private void initDrawer() {
         // TODO Auto-generated method stub
@@ -99,12 +101,12 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -194,13 +196,19 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
                 break;
             case 1:
-
+                closeDrawer();
+                if (mRelaxFragment == null) {
+                    mRelaxFragment = new RelaxFragment();
+                    transaction.add(R.id.container, mRelaxFragment);
+                } else {
+                    transaction.show(mRelaxFragment);
+                }
+                transaction.commit();
 
                 break;
             case 2:
 
                 closeDrawer();
-
                 SettingsFragment.launch(MainActivity.this);
                 break;
 
@@ -215,11 +223,38 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         if (mMainFragment != null) {
             transaction.hide(mMainFragment);
         }
+        if (mRelaxFragment != null) {
+            transaction.hide(mRelaxFragment);
+        }
 
     }
 
 
     public void closeDrawer() {
         mDrawerLayout.closeDrawers();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // 截获后退键
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            long currentTime = new Date().getTime();
+
+            // 如果时间间隔大于2秒, 不处理
+            if ((currentTime - preTime) > TWO_SECOND) {
+                // 显示消息
+                T.showShort(mContext, "再按一次退出应用程序");
+
+                // 更新时间
+                preTime = currentTime;
+
+                // 截获事件,不再处理
+                return true;
+            } else {
+                ActivityTack.getInstanse().exit(mContext);
+            }
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 }

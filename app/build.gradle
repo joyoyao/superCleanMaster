@@ -8,8 +8,8 @@ android {
         applicationId "com.yzy.supercleanmaster"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "0.8"
     }
     buildTypes {
         release {
@@ -28,6 +28,8 @@ dependencies {
     compile 'com.nhaarman.listviewanimations:lib-core-slh:3.1.0@aar'
     compile 'com.umeng.analytics:analytics:latest.integration'
     compile 'com.github.gabrielemariotti.changeloglib:library:1.5.2'
+    compile 'com.hannesdorfmann.smoothprogressbar:library:1.0.0'
+    compile 'com.github.castorflex.smoothprogressbar:library-circular:1.0.0'
     compile project(':library')
     compile files('libs/nineoldandroids-2.4.0.jar')
     compile files('libs/umeng-update-v2.5.0.jar')

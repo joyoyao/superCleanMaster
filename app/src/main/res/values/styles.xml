@@ -72,4 +72,23 @@
         <item name="shadow_right">@drawable/shadow_right</item>
         <item name="shadow_bottom">@drawable/shadow_bottom</item>
     </style>
+    <style name="Label.Shadow" parent="@style/Label">
+        <item name="android:shadowColor">#88000000</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.5</item>
+    </style>
+    <style name="Label.Shadow.Medium" parent="@style/Label.Shadow">
+        <item name="android:textSize">@dimen/text_md</item>
+    </style>
+    <style name="Label">
+        <item name="android:textSize">@dimen/text_lg</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="Label.Medium" parent="@style/Label">
+        <item name="android:textSize">@dimen/text_md</item>
+    </style>
 </resources>

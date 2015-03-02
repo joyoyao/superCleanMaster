@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import com.yzy.supercleanmaster.R;
 import com.yzy.supercleanmaster.bean.AppProcessInfo;
-import com.yzy.supercleanmaster.utils.AppUtil;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -179,14 +178,21 @@ public class CoreService extends Service {
                     abAppProcessInfo.icon = icon;
                     abAppProcessInfo.appName = appName;
                 } catch (PackageManager.NameNotFoundException e) {
-                    e.printStackTrace();
+                    //   e.printStackTrace();
 
                     // :服务的命名
+
                     if (appProcessInfo.processName.indexOf(":") != -1) {
-                        appInfo = AppUtil.getApplicationInfo(mContext,
-                                appProcessInfo.processName.split(":")[0]);
-                        Drawable icon = appInfo.loadIcon(packageManager);
-                        abAppProcessInfo.icon = icon;
+                        appInfo = getApplicationInfo(appProcessInfo.processName.split(":")[0]);
+                        if (appInfo != null) {
+                            Drawable icon = appInfo.loadIcon(packageManager);
+                            abAppProcessInfo.icon = icon;
+                        }else{
+                            abAppProcessInfo.icon = mContext.getResources().getDrawable(R.drawable.ic_launcher);
+                        }
+
+                    }else{
+                        abAppProcessInfo.icon = mContext.getResources().getDrawable(R.drawable.ic_launcher);
                     }
                     abAppProcessInfo.isSystem = true;
                     abAppProcessInfo.appName = appProcessInfo.processName;
@@ -308,6 +314,20 @@ public class CoreService extends Service {
 
     public void setOnActionListener(OnPeocessActionListener listener) {
         mOnActionListener = listener;
+    }
+
+    public ApplicationInfo getApplicationInfo( String processName) {
+        if (processName == null) {
+            return null;
+        }
+        List<ApplicationInfo> appList = packageManager
+                .getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
+        for (ApplicationInfo appInfo : appList) {
+            if (processName.equals(appInfo.processName)) {
+                return appInfo;
+            }
+        }
+        return null;
     }
 
     public boolean isScanning() {

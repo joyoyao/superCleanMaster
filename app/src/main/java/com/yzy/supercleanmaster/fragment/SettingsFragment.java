@@ -11,11 +11,13 @@ import android.preference.PreferenceFragment;
 import com.umeng.socialize.bean.RequestType;
 import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
+import com.umeng.socialize.weixin.controller.UMWXHandler;
 import com.umeng.update.UmengUpdateAgent;
 import com.umeng.update.UmengUpdateListener;
 import com.umeng.update.UpdateResponse;
 import com.yzy.supercleanmaster.R;
 import com.yzy.supercleanmaster.base.FragmentContainerActivity;
+import com.yzy.supercleanmaster.ui.AboutActivity;
 import com.yzy.supercleanmaster.utils.AppUtil;
 import com.yzy.supercleanmaster.utils.T;
 import com.yzy.supercleanmaster.utils.Utils;
@@ -34,6 +36,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     private Preference pGithub;// Github
     private Preference pGrade;// Github
     private Preference pShare;// Github
+    private Preference pAbout;// Github
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +66,9 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         pGrade.setOnPreferenceClickListener(this);
         pShare = findPreference("pShare");
         pShare.setOnPreferenceClickListener(this);
+        pAbout = findPreference("pAbout");
+        pAbout.setOnPreferenceClickListener(this);
+        initData();
     }
 
 
@@ -90,6 +96,9 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         }else if ("pShare".equals(preference.getKey())) {
                 shareMyApp();
         }
+        else if ("pAbout".equals(preference.getKey())) {
+            getActivity().startActivity(new Intent(getActivity(), AboutActivity.class));
+        }
         return false;
     }
 
@@ -98,6 +107,21 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         UMSocialService mController = UMServiceFactory.getUMSocialService("com.umeng.share", RequestType.SOCIAL);
         mController.setShareContent("一键清理（开源版）一键清理手机进程，真心不错呀,推荐您使用！.");
         mController.openShare(getActivity(), false);
+
+    }
+
+    private void initData() {
+        String appID = "wxa263da737a20300e";
+        String appSecret = "381a2fab6466410c674afaa40c77c953";
+// 添加微信平台
+        UMWXHandler wxHandler = new UMWXHandler(getActivity(),appID,appSecret);
+        wxHandler.addToSocialSDK();
+// 添加微信朋友圈
+        UMWXHandler wxCircleHandler = new UMWXHandler(getActivity(),appID,appSecret);
+        wxCircleHandler.setToCircle(true);
+        wxCircleHandler.addToSocialSDK();
+
+
 
     }
 

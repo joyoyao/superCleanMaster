@@ -81,20 +81,6 @@
                 android:textSize="17sp" />
 
 
-            <RadioButton
-                android:id="@+id/radio3"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/drawer_selector_bg"
-                android:button="@null"
-                android:drawableLeft="@drawable/drawer_selector_4"
-                android:drawablePadding="15dp"
-                android:gravity="center_vertical|left"
-                android:paddingLeft="17dp"
-                android:paddingRight="0dp"
-                android:text="关于"
-                android:textColor="@drawable/drawer_selector_font"
-                android:textSize="17sp" />
         </LinearLayout>
     </LinearLayout>
 

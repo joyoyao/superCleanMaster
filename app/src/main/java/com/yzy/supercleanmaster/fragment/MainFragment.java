@@ -1,21 +1,17 @@
 package com.yzy.supercleanmaster.fragment;
 
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.umeng.update.UmengUpdateAgent;
 import com.yzy.supercleanmaster.R;
 import com.yzy.supercleanmaster.base.BaseFragment;
 import com.yzy.supercleanmaster.model.SDCardInfo;
-import com.yzy.supercleanmaster.service.CoreService;
 import com.yzy.supercleanmaster.ui.AutoStartManageActivity;
 import com.yzy.supercleanmaster.ui.MemoryCleanActivity;
 import com.yzy.supercleanmaster.ui.RubbishCleanActivity;
@@ -39,32 +35,14 @@ public class MainFragment extends BaseFragment {
 
     @InjectView(R.id.arc_process)
     ArcProgress arcProcess;
+    @InjectView(R.id.capacity)
+    TextView capacity;
 
     Context mContext;
 
     private Timer timer;
     private Timer timer2;
-    private CoreService mCoreService;
 
-    private ServiceConnection mServiceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            mCoreService = ((CoreService.ProcessServiceBinder) service).getService();
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            mCoreService.setOnActionListener(null);
-            mCoreService = null;
-        }
-    };
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getActivity().getApplication().bindService(new Intent(getActivity(), CoreService.class),
-                mServiceConnection, Context.BIND_AUTO_CREATE);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -81,8 +59,8 @@ public class MainFragment extends BaseFragment {
 
     @Override
     public void onResume() {
-        fillData();
         super.onResume();
+        fillData();
     }
 
     @Override
@@ -126,7 +104,7 @@ public class MainFragment extends BaseFragment {
         }, 50, 20);
 
         SDCardInfo mSDCardInfo = StorageUtil.getSDCardInfo();
-        SDCardInfo mSystemInfo = StorageUtil.getSystemSpaceInfo();
+        SDCardInfo mSystemInfo = StorageUtil.getSystemSpaceInfo(mContext);
 
         long nAvailaBlock;
         long TotalBlocks;
@@ -139,6 +117,8 @@ public class MainFragment extends BaseFragment {
         }
 
         final double percentStore = (((TotalBlocks - nAvailaBlock) / (double) TotalBlocks) * 100);
+
+        capacity.setText(StorageUtil.convertStorage(TotalBlocks - nAvailaBlock) + "/" + StorageUtil.convertStorage(TotalBlocks));
         arcStore.setProgress(0);
 
         timer2.schedule(new TimerTask() {
@@ -196,7 +176,6 @@ public class MainFragment extends BaseFragment {
     public void onDestroy() {
         timer.cancel();
         timer2.cancel();
-        getActivity().getApplication().unbindService(mServiceConnection);
         super.onDestroy();
     }
 }

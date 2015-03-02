@@ -35,4 +35,9 @@
     <dimen name="actionbar_height">45dip</dimen>
     <dimen name="actionbar_item_height">45dip</dimen>
     <dimen name="actionbar_item_width">45dip</dimen>
+    <dimen name="abs__action_bar_default_height">48.0dip</dimen>
+    <dimen name="text_sm">7.0sp</dimen>
+    <dimen name="text_md">11.0sp</dimen>
+    <dimen name="text_lg">17.0sp</dimen>
+    <dimen name="text_xl">125.0sp</dimen>
 </resources>
