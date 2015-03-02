@@ -11,7 +11,7 @@
 * 自启管理
 * 软件管理
 * 设备信息<br>
-## 应用截图
+#应用截图
 <br>
 ![](https://github.com/joyoyao/superCleanMaster/blob/master/screenshot/home.jpg)  
 ![](https://github.com/joyoyao/superCleanMaster/blob/master/screenshot/1.jpg) 
