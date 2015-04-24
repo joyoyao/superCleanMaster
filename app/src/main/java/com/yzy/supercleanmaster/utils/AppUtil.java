@@ -988,13 +988,13 @@ public class AppUtil {
                 L.d(AppUtil.class, str + "\t");
             }
             // 获得系统总内存，单位KB
-            memory = Integer.valueOf(strs[1]).intValue() * 1024;
+            memory = Integer.valueOf(strs[1]).intValue() ;
             bufferedReader.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
         // Byte转位KB或MB
-        return memory;
+        return memory*1024;
     }
 
 }
