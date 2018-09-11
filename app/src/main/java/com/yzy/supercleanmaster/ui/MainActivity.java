@@ -42,7 +42,6 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
     ActionBar ab;
     private CharSequence mTitle;
-
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerArrowDrawable drawerArrow;
     private boolean drawerArrowColor;

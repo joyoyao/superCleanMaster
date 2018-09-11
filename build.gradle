@@ -16,6 +16,8 @@ buildscript {
 
 allprojects {
     repositories {
+        // The order in which you list these repositories matter.
+        google()
         jcenter()
     }
 }

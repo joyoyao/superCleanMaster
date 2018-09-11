@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
 
                     android:textColor="@color/white"
-                    android:text="可清理"
+                    android:text="Может быть очищен"
                     android:textSize="@dimen/text_size_middle"
                     android:layout_height="wrap_content" />
 
@@ -98,14 +98,14 @@
 
             <Button
                 android:id="@+id/clear_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dip"
                 android:background="@drawable/btn_normal_green"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_large"
-                android:layout_width="match_parent"
                 android:gravity="center"
-                android:text="一键清理"
-                android:layout_height="wrap_content" />
+                android:text="Очистить"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large" />
         </LinearLayout>
 
     </RelativeLayout>

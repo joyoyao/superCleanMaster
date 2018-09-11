@@ -20,22 +20,23 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.jakewharton:butterknife:6.0.0'
-    compile 'com.nhaarman.listviewanimations:lib-core:3.1.0@aar'
-    compile 'com.nhaarman.listviewanimations:lib-manipulation:3.1.0@aar'
-    compile 'com.nhaarman.listviewanimations:lib-core-slh:3.1.0@aar'
-    compile 'com.umeng.analytics:analytics:latest.integration'
-    compile 'com.github.gabrielemariotti.changeloglib:library:1.5.2'
-    compile 'com.hannesdorfmann.smoothprogressbar:library:1.0.0'
-    compile 'com.github.castorflex.smoothprogressbar:library-circular:1.0.0'
-    compile project(':library')
-    compile files('libs/nineoldandroids-2.4.0.jar')
-    compile files('libs/umeng-update-v2.5.0.jar')
-    compile files('libs/httpmime-4.1.3.jar')
-    compile files('libs/umeng_social_sdk.jar')
-    compile files('libs/SocialSDK_laiwang_1.jar')
-    compile files('libs/SocialSDK_laiwang_2.jar')
-    compile files('libs/SocialSDK_QQZone_1.jar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:21.0.3'
+    implementation 'com.jakewharton:butterknife:6.0.0'
+    implementation 'com.nhaarman.listviewanimations:lib-core:3.1.0@aar'
+    implementation 'com.nhaarman.listviewanimations:lib-manipulation:3.1.0@aar'
+    implementation 'com.nhaarman.listviewanimations:lib-core-slh:3.1.0@aar'
+    implementation 'com.umeng.analytics:analytics:latest.integration'
+    implementation 'com.github.gabrielemariotti.changeloglib:library:1.5.2'
+    implementation 'com.hannesdorfmann.smoothprogressbar:library:1.0.0'
+    implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.0.0'
+    implementation project(':library')
+    implementation files('libs/nineoldandroids-2.4.0.jar')
+    implementation files('libs/umeng-update-v2.5.0.jar')
+    implementation files('libs/httpmime-4.1.3.jar')
+    implementation files('libs/umeng_social_sdk.jar')
+    implementation files('libs/SocialSDK_laiwang_1.jar')
+    implementation files('libs/SocialSDK_laiwang_2.jar')
+    implementation files('libs/SocialSDK_QQZone_1.jar')
+    implementation 'com.android.support:support-v4:21.0.3'
 }

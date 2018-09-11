@@ -6,7 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.umeng.update.UmengUpdateAgent;
 import com.yzy.supercleanmaster.R;
@@ -42,6 +44,7 @@ public class MainFragment extends BaseFragment {
 
     private Timer timer;
     private Timer timer2;
+    Button CleanRubbish;
 
 
     @Override
@@ -50,6 +53,8 @@ public class MainFragment extends BaseFragment {
         // TODO Auto-generated method stub
 
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+
+
         ButterKnife.inject(this, view);
         mContext = getActivity();
 
@@ -155,10 +160,7 @@ public class MainFragment extends BaseFragment {
     }
 
 
-    @OnClick(R.id.card3)
-    void AutoStartManage() {
-        startActivity(AutoStartManageActivity.class);
-    }
+
 
     @OnClick(R.id.card4)
     void SoftwareManage() {

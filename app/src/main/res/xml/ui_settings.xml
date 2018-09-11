@@ -4,12 +4,12 @@
     <PreferenceCategory android:title="@string/category_def">
         <Preference
             android:key="createShortCut"
-            android:title="创建&quot;一键加速&quot;快捷方式" />
+            android:title="создать&quot;Однократное ускорение&quot;Ярлыки" />
         <SwitchPreference
             android:key="powerClear"
-            android:title="强力清理"
+            android:title="Сильная очистка"
             android:enabled="false"
-            android:summary="此功能需要root权限" />
+            android:summary="Эта функция требует root компетентность" />
 
     </PreferenceCategory>
 

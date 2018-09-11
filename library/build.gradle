@@ -22,6 +22,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:recyclerview-v7:21.0.3'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:recyclerview-v7:21.0.3'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:support-v4:21.0.3'
 }

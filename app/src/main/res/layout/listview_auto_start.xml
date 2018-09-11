@@ -42,7 +42,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="?android:attr/textColorSecondary"
             android:textAlignment="viewStart"
-            android:text="开机/后台自启"
+            android:text="Самозапуск загрузки / фона"
             android:layout_gravity="start"></TextView>
 
     </LinearLayout>

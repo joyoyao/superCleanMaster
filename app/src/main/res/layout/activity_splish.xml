@@ -18,13 +18,13 @@
         android:background="@drawable/entrance_bottom_bg" />
 
     <LinearLayout
-        android:layout_marginBottom="18dp"
-        android:layout_above="@+id/title"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-      android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="84dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -37,22 +37,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="一键清理 开源版"
+            android:text="Название"
             android:textColor="#b3ffffff"
             android:textSize="20sp" />
 
     </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="17dp"
-        android:gravity="center_horizontal"
-        android:text="春光乍泄 © 堂堂炒栗子的"
-        android:textColor="#b3ffffff"
-        android:textSize="9sp" />
 
 </RelativeLayout>

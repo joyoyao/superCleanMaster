@@ -7,66 +7,69 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1.4">
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_height="200dip">
+            android:layout_width="286dp"
+            android:layout_height="206dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp">
 
             <RelativeLayout
                 android:id="@+id/arc_left"
-                android:layout_height="200dip"
-                android:layout_width="wrap_content"
+                android:layout_width="102dp"
+                android:layout_height="91dp"
                 android:layout_centerVertical="true">
 
                 <com.yzy.supercleanmaster.widget.circleprogress.ArcProgress
                     android:id="@+id/arc_store"
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    custom:arc_bottom_text="存储空间"
-                    custom:arc_bottom_text_size="18dip"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    custom:arc_bottom_text="Место для хранения"
+                    custom:arc_bottom_text_size="5dp"
                     custom:arc_progress="10"
                     custom:arc_stroke_width="8dip"
                     custom:arc_text_color="#ffffff"
-                    custom:arc_text_size="32dip" />
+                    custom:arc_text_size="16dp" />
 
                 <TextView
                     android:id="@+id/capacity"
-                    android:layout_centerHorizontal="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="12dip"
-                    android:text="20/30"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="55dip" />
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="55dip"
+                    android:text="20/30"
+                    android:textColor="@color/white"
+                    android:textSize="10dip" />
             </RelativeLayout>
 
             <com.yzy.supercleanmaster.widget.circleprogress.ArcProgress
                 android:id="@+id/arc_process"
-                android:layout_width="100dp"
-                android:layout_marginLeft="15dip"
-                android:layout_toRightOf="@+id/arc_left"
-                android:layout_height="100dp"
-                custom:arc_bottom_text="内存"
-                android:layout_marginBottom="25dip"
-                android:layout_alignParentBottom="true"
-                custom:arc_bottom_text_size="14dip"
+                android:layout_width="69dp"
+                android:layout_height="69dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="49dp"
+                custom:arc_bottom_text="Память"
+                custom:arc_bottom_text_size="7dp"
                 custom:arc_progress="10"
                 custom:arc_stroke_width="6dip"
                 custom:arc_text_color="#ffffff"
-                custom:arc_text_size="26dip" />
+                custom:arc_text_size="16dip" />
         </RelativeLayout>
 
 
         <RelativeLayout
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="#3762ad">
+            android:background="#3762ad"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -74,6 +77,7 @@
                 android:layout_centerInParent="true"
                 android:text="dddd" />
         </RelativeLayout>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -81,7 +85,11 @@
         android:layout_height="0dip"
         android:layout_weight="1">
 
-        <include layout="@layout/include_main_card" />
+        <include
+            layout="@layout/include_main_card"
+            android:layout_height="match_parent" />
     </RelativeLayout>
+
+
 
 </LinearLayout>

@@ -23,7 +23,7 @@
             style="@style/umeng_socialize_edit_padding"
             android:layout_centerVertical="true"
             android:paddingLeft="32dp"
-            android:hint="搜索"
+            android:hint="поиск"
             android:textSize="14sp"
             android:maxLength="8"
             android:textColor="@color/umeng_socialize_list_item_textcolor" />

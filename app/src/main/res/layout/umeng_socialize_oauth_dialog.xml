@@ -31,7 +31,7 @@
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/umeng_socialize_follow_check"
             android:textSize="16sp"
-            android:text="关注官方微博"
+            android:text="Следуйте за официальным Weibo"
             android:textColor="#f8f8f8" />
     </RelativeLayout>
 
