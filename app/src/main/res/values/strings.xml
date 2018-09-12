@@ -15,6 +15,7 @@
     <string name="app_software_manage">Удаление программ</string>
     <string name="cleaned">Очистка мусора(<xliff:g id="memory">%1$s</xliff:g>)</string>
     <string name="empty_cache">Поздравляю! Память освобождена!</string>
+    <string name="saving_battery">Поздравляю! Вы сэкономили заряд батареи!</string>
     <string name="scanning">Сканирование ...</string>
     <string name="scanning_m_of_n">Сканирование %1$d/%2$d</string>
     <string name="software_top_text">Был установлен%1$sПрограммное обеспечение, занимающее место для хранения%2$s</string>

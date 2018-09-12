@@ -1,39 +1,24 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:wave="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:counter="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layout_container1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    >
 
     <RelativeLayout
-        android:id="@+id/layout_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="100dip"
-            android:visibility="gone"
+            android:layout_height="80dip"
             android:background="@color/title_bg"
+            android:visibility="gone"
             android:orientation="vertical">
-
-            <com.john.waveview.WaveView
-                android:visibility="gone"
-                android:id="@+id/wave_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/title_bg"
-                wave:above_wave_color="@android:color/white"
-                wave:blow_wave_color="@android:color/white"
-                wave:progress="50"
-                wave:wave_height="little"
-                wave:wave_hz="normal"
-                wave:wave_length="middle" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -59,41 +44,51 @@
                     android:text="KB"
                     android:textSize="@dimen/text_size_middle"
                     android:layout_height="wrap_content" />
+
                 <TextView
                     android:layout_marginLeft="@dimen/margin_right"
                     android:layout_marginTop="10dip"
                     android:layout_toRightOf="@+id/textCounter"
                     android:layout_below="@+id/sufix"
                     android:layout_width="wrap_content"
+
                     android:textColor="@color/white"
-                    android:text="Памяти"
+                    android:text="Может быть усыплено"
                     android:textSize="@dimen/text_size_middle"
                     android:layout_height="wrap_content" />
 
             </RelativeLayout>
+
 
         </RelativeLayout>
 
         <ListView
             android:layout_below="@+id/header"
             android:id="@+id/listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:fastScrollEnabled="true"
             android:focusable="true"
             android:listSelector="@android:color/transparent"
             android:scrollbars="none"
-            android:background="#e2e2e2"
             android:clipToPadding="false"
             android:divider="@null"
             android:dividerHeight="4dp"
             android:fadingEdge="none"
             android:fitsSystemWindows="true"
-            android:padding="12dp"
             android:scrollbarStyle="outsideOverlay"
-            tools:ignore="overdraw" />
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/saving_battery"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <LinearLayout
+
             android:visibility="gone"
             android:orientation="horizontal"
             android:id="@+id/bottom_lin"
@@ -103,18 +98,18 @@
 
             <Button
                 android:id="@+id/clear_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dip"
                 android:background="@drawable/btn_normal_green"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_large"
-                android:layout_width="match_parent"
                 android:gravity="center"
-                android:text="Освободить"
-                android:layout_height="wrap_content" />
+                android:text="Усыпить"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large" />
         </LinearLayout>
 
-
     </RelativeLayout>
+
 
     <LinearLayout
         android:id="@+id/progressBar"

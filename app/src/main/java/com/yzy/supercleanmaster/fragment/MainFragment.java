@@ -1,6 +1,9 @@
 package com.yzy.supercleanmaster.fragment;
 
+import android.app.ActivityManager;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -15,6 +18,7 @@ import com.yzy.supercleanmaster.R;
 import com.yzy.supercleanmaster.base.BaseFragment;
 import com.yzy.supercleanmaster.model.SDCardInfo;
 import com.yzy.supercleanmaster.ui.AutoStartManageActivity;
+import com.yzy.supercleanmaster.ui.BatterySavingActivity;
 import com.yzy.supercleanmaster.ui.MemoryCleanActivity;
 import com.yzy.supercleanmaster.ui.RubbishCleanActivity;
 import com.yzy.supercleanmaster.ui.SoftwareManageActivity;
@@ -22,6 +26,7 @@ import com.yzy.supercleanmaster.utils.AppUtil;
 import com.yzy.supercleanmaster.utils.StorageUtil;
 import com.yzy.supercleanmaster.widget.circleprogress.ArcProgress;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -159,14 +164,42 @@ public class MainFragment extends BaseFragment {
         startActivity(RubbishCleanActivity.class);
     }
 
+    @OnClick(R.id.card3)
+    void batterySaving() {
+        List<ApplicationInfo> packages;
+        PackageManager pm;
+        pm = getPackageManager();
+        //get a list of installed apps.
+        packages = pm.getInstalledApplications(0);
 
+        ActivityManager mActivityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+
+        for (ApplicationInfo packageInfo : packages) {
+            if((packageInfo.flags & ApplicationInfo.FLAG_SYSTEM)==1)continue;
+            if(packageInfo.packageName.equals("mypackage")) continue;
+            mActivityManager.killBackgroundProcesses(packageInfo.packageName);
+        }
+        //startActivity(BatterySavingActivity.class);
+    }
 
 
     @OnClick(R.id.card4)
     void SoftwareManage() {
         startActivity(SoftwareManageActivity.class);
     }
+List<ApplicationInfo> packages;
+    PackageManager pm;
+    pm = getPackageManager();
+    //get a list of installed apps.
+    packages = pm.getInstalledApplications(0);
 
+    ActivityManager mActivityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+
+   for (ApplicationInfo packageInfo : packages) {
+        if((packageInfo.flags & ApplicationInfo.FLAG_SYSTEM)==1)continue;
+        if(packageInfo.packageName.equals("mypackage")) continue;
+        mActivityManager.killBackgroundProcesses(packageInfo.packageName);
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();

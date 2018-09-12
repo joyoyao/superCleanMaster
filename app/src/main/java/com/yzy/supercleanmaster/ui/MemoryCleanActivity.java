@@ -260,7 +260,7 @@ public class MemoryCleanActivity extends BaseSwipeBackActivity implements OnDism
             }
         }
         Allmemory = Allmemory - killAppmemory;
-        T.showLong(mContext, "共清理" + StorageUtil.convertStorage(killAppmemory) + "内存");
+        T.showLong(mContext, "Очищено " + StorageUtil.convertStorage(killAppmemory) + " памяти");
         if (Allmemory > 0) {
             refeshTextCounter();
         }
