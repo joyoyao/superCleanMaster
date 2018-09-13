@@ -21,6 +21,7 @@ import com.yzy.supercleanmaster.ui.AutoStartManageActivity;
 import com.yzy.supercleanmaster.ui.BatterySavingActivity;
 import com.yzy.supercleanmaster.ui.MemoryCleanActivity;
 import com.yzy.supercleanmaster.ui.RubbishCleanActivity;
+import com.yzy.supercleanmaster.ui.ShortCutActivity;
 import com.yzy.supercleanmaster.ui.SoftwareManageActivity;
 import com.yzy.supercleanmaster.utils.AppUtil;
 import com.yzy.supercleanmaster.utils.StorageUtil;
@@ -166,20 +167,20 @@ public class MainFragment extends BaseFragment {
 
     @OnClick(R.id.card3)
     void batterySaving() {
-        List<ApplicationInfo> packages;
-        PackageManager pm;
-        pm = getPackageManager();
-        //get a list of installed apps.
-        packages = pm.getInstalledApplications(0);
+     //  List<ApplicationInfo> packages;
+     //  PackageManager pm;
+     //  pm = getPackageManager();
+     //  //get a list of installed apps.
+     //  packages = pm.getInstalledApplications(0);
 
-        ActivityManager mActivityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+     //  ActivityManager mActivityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
 
-        for (ApplicationInfo packageInfo : packages) {
-            if((packageInfo.flags & ApplicationInfo.FLAG_SYSTEM)==1)continue;
-            if(packageInfo.packageName.equals("mypackage")) continue;
-            mActivityManager.killBackgroundProcesses(packageInfo.packageName);
-        }
-        //startActivity(BatterySavingActivity.class);
+     //  for (ApplicationInfo packageInfo : packages) {
+     //      if((packageInfo.flags & ApplicationInfo.FLAG_SYSTEM)==1)continue;
+     //      if(packageInfo.packageName.equals("mypackage")) continue;
+     //      mActivityManager.killBackgroundProcesses(packageInfo.packageName);
+     //  }
+     //   startActivity(ShortCutActivity.class);
     }
 
 
@@ -187,19 +188,7 @@ public class MainFragment extends BaseFragment {
     void SoftwareManage() {
         startActivity(SoftwareManageActivity.class);
     }
-List<ApplicationInfo> packages;
-    PackageManager pm;
-    pm = getPackageManager();
-    //get a list of installed apps.
-    packages = pm.getInstalledApplications(0);
 
-    ActivityManager mActivityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
-
-   for (ApplicationInfo packageInfo : packages) {
-        if((packageInfo.flags & ApplicationInfo.FLAG_SYSTEM)==1)continue;
-        if(packageInfo.packageName.equals("mypackage")) continue;
-        mActivityManager.killBackgroundProcesses(packageInfo.packageName);
-    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
