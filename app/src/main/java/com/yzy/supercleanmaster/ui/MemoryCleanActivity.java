@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,9 @@ import android.widget.TextView;
 
 import com.etiennelawlor.quickreturn.library.enums.QuickReturnType;
 import com.etiennelawlor.quickreturn.library.listeners.QuickReturnListViewOnScrollListener;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.john.waveview.WaveView;
 import com.nhaarman.listviewanimations.appearance.simple.SwingBottomInAnimationAdapter;
 import com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.OnDismissCallback;
@@ -81,9 +85,9 @@ public class MemoryCleanActivity extends BaseSwipeBackActivity implements OnDism
     Button clearButton;
     private static final int INITIAL_DELAY_MILLIS = 300;
     SwingBottomInAnimationAdapter swingBottomInAnimationAdapter;
-
+    private static final String TAG = "myLogs";
     private CoreService mCoreService;
-
+    private InterstitialAd mInterstitialAd;
     private ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -119,6 +123,9 @@ public class MemoryCleanActivity extends BaseSwipeBackActivity implements OnDism
         textCounter.setAutoStart(false);
         textCounter.setIncrement(5f); // the amount the number increments at each time interval
         textCounter.setTimeInterval(50); // the time interval (ms) at which the text changes
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
     @Override
@@ -264,7 +271,43 @@ public class MemoryCleanActivity extends BaseSwipeBackActivity implements OnDism
         if (Allmemory > 0) {
             refeshTextCounter();
         }
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+        }
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                Log.d(TAG,"onAdLoaded");
+// Code to be executed when an ad finishes loading.
+            }
 
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                Log.d(TAG,"onAdFailedToLoad");
+// Code to be executed when an ad request fails.
+            }
+
+            @Override
+            public void onAdOpened() {
+                Log.d(TAG,"onAdOpened");
+
+                // Code to be executed when the ad is displayed.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                Log.d(TAG,"onAdLeftApplication");
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                Log.d(TAG,"onAdClosed");
+// Code to be executed when when the interstitial ad is closed.
+            }
+        });
 
     }
 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">Название</string>
+    <string name="short_cut_name">Однократное ускорение</string>
+    <string name="hello_world">Привет мир!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="app_memory_clean">Ускорение памяти</string>
+    <string name="app_rublish_clean">Уборка мусора</string>
+    <string name="app_autostart_manage">Управление самозапуском</string>
+    <string name="app_software_manage">Удаление программ</string>
+    <string name="cleaned">Очистка мусора(<xliff:g id="memory">%1$s</xliff:g>)</string>
+    <string name="empty_cache">Поздравляю! Память освобождена!</string>
+    <string name="saving_battery">Поздравляю! Вы сэкономили заряд батареи!</string>
+    <string name="scanning">Сканирование ...</string>
+    <string name="scanning_m_of_n">Сканирование %1$d/%2$d</string>
+    <string name="software_top_text">Был установлен%1$sПрограммное обеспечение, занимающее место для хранения%2$s</string>
+
+
+    <string name="category_other">другое</string>
+    <string name="category_def">Общая настройка </string>
+    <string name="settings_basic">Основные настройки</string>
+    <string name="category_advanced">Расширенные настройки</string>
+    <string name="settings_about">на</string>
+    <string name="settings_version_update">Обновить</string>
+    <string name="settings_grade">Дайте мне похвалу</string>
+    <string name="settings_share">Рекомендовать другу</string>
+
+    <string name="title_settings">устанавливать</string>
+    <string name="app_information">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;\
+        Эффективно быстро и точно очистите мобильный телефон от спама и ускорьте свой телефон. </string>
+    <string name="all_rights_reserved">Copyright © 2018 Dziuba. All Rights Reserved.</string>
+</resources>

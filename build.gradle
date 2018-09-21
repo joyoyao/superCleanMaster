@@ -5,6 +5,7 @@ buildscript {
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         jcenter()
         google()
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
@@ -19,5 +20,8 @@ allprojects {
         // The order in which you list these repositories matter.
         google()
         jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
     }
 }

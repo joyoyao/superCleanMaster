@@ -14,6 +14,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.ikimuhendis.ldrawer.ActionBarDrawerToggle;
 import com.ikimuhendis.ldrawer.DrawerArrowDrawable;
 import com.yzy.supercleanmaster.R;
@@ -41,6 +44,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     DrawerLayout mDrawerLayout;
 
     ActionBar ab;
+    private InterstitialAd mInterstitialAd;
     private CharSequence mTitle;
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerArrowDrawable drawerArrow;
@@ -63,7 +67,10 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
         onNavigationDrawerItemSelected(0);
         initDrawer();
-
+        MobileAds.initialize(this, "ca-app-pub-3982529297840521~5735971553");
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
     }
 

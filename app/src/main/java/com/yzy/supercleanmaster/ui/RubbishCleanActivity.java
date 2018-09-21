@@ -7,15 +7,24 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.IPackageDataObserver;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.AdRequest;
 import android.text.format.Formatter;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,11 +54,17 @@ import com.yzy.supercleanmaster.utils.UIElementsHelper;
 import com.yzy.supercleanmaster.widget.textcounter.CounterView;
 import com.yzy.supercleanmaster.widget.textcounter.formatters.DecimalFormatter;
 
+import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
+
+import static com.umeng.socialize.utils.BitmapUtils.cleanCache;
+import static java.util.ResourceBundle.clearCache;
 
 
 public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDismissCallback, CleanerService.OnActionListener {
@@ -60,7 +75,7 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
     protected static final int SCAN_FINIFSH = 6;
     protected static final int PROCESS_MAX = 8;
     protected static final int PROCESS_PROCESS = 9;
-
+    private static final String TAG = "myLogs";
     private static final int INITIAL_DELAY_MILLIS = 300;
     SwingBottomInAnimationAdapter swingBottomInAnimationAdapter;
     Resources res;
@@ -69,9 +84,12 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
 
 
     private CleanerService mCleanerService;
-
+    private InterstitialAd mInterstitialAd;
     private boolean mAlreadyScanned = false;
     private boolean mAlreadyCleaned = false;
+
+    private static final long CACHE_APP = Long.MAX_VALUE;
+    private CachePackageDataObserver mClearCacheObserver;
 
     @InjectView(R.id.listview)
     ListView mListView;
@@ -146,7 +164,9 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
         bindService(new Intent(mContext, CleanerService.class),
                 mServiceConnection, Context.BIND_AUTO_CREATE);
             // for android 6.0+
-
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
     @Override
@@ -171,7 +191,8 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
+                    Log.d(TAG,"permission granted");
+                    Toast.makeText(mContext,"Permission granted",Toast.LENGTH_SHORT).show();
                     // permission was granted, yay! Do the
 
                     // contacts-related task you need to do.
@@ -181,6 +202,7 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
 
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
+                    Log.d(TAG,"permission dont granted");
 
                     Toast.makeText(mContext,"You need to accept the permission",Toast.LENGTH_SHORT).show();
                 }
@@ -244,8 +266,11 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
 
     @Override
     public void onCleanStarted(Context context) {
+
         if (isProgressBarVisible()) {
             showProgressBar(false);
+
+
         }
 
         if (!RubbishCleanActivity.this.isFinishing()) {
@@ -255,6 +280,8 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
 
     @Override
     public void onCleanCompleted(Context context, long cacheSize) {
+        Log.d(TAG,"CLean compleate");
+
         dismissDialogLoading();
         Toast.makeText(context, context.getString(R.string.cleaned, Formatter.formatShortFileSize(
                 mContext, cacheSize)), Toast.LENGTH_LONG).show();
@@ -262,6 +289,7 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
         bottom_lin.setVisibility(View.GONE);
         mCacheListItem.clear();
         rublishMemoryAdapter.notifyDataSetChanged();
+
     }
 
 
@@ -288,10 +316,41 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
 
     }
 
+    public void clearALLCache()
+    {
+        List<PackageInfo> packList = getPackageManager().getInstalledPackages(0);
+        for (int i=0; i < packList.size(); i++)
+        {
+            PackageInfo packInfo = packList.get(i);
+            if (  (packInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0)
+            {
+                String appName = packInfo.applicationInfo.loadLabel(getPackageManager()).toString();
+                try {
+                    // clearing app data
+                    //                    Runtime runtime = Runtime.getRuntime();
+                    //                    runtime.exec("pm clear "+packInfo.packageName);
+                    Context context = getApplicationContext().createPackageContext(packInfo.packageName,Context.CONTEXT_IGNORE_SECURITY);
+                    deleteCache(context);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
     @OnClick(R.id.clear_button)
     public void onClickClear() {
-        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CLEAR_APP_CACHE) != PackageManager.PERMISSION_GRANTED) {
+        if (mCleanerService != null && !mCleanerService.isScanning() &&
+                !mCleanerService.isCleaning() && mCleanerService.getCacheSize() > 0) {
+            mAlreadyCleaned = false;
+
+            cleanCache();
+        }
+        clearALLCache();
+        deleteCache(this);
+        clearCache();
+        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -300,14 +359,14 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
             if (ActivityCompat.shouldShowRequestPermissionRationale( this,
-                    Manifest.permission.CLEAR_APP_CACHE)) {
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
 
                 // Show an expanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
 
                 ActivityCompat.requestPermissions(RubbishCleanActivity.this,
-                        new String[]{Manifest.permission.CLEAR_APP_CACHE},
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         1);
 
             } else {
@@ -315,7 +374,7 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
                 // No explanation needed, we can request the permission.
 
                 ActivityCompat.requestPermissions(RubbishCleanActivity.this,
-                        new String[]{Manifest.permission.CLEAR_APP_CACHE},
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         1);
 
                 // 1 is an int constant. The callback method gets the  result of the request.
@@ -330,8 +389,75 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
 
             mCleanerService.cleanCache();
         }
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+        }
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                Log.d(TAG,"onAdLoaded");
+// Code to be executed when an ad finishes loading.
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                Log.d(TAG,"onAdFailedToLoad");
+// Code to be executed when an ad request fails.
+            }
+
+            @Override
+            public void onAdOpened() {
+                Log.d(TAG,"onAdOpened");
+
+                // Code to be executed when the ad is displayed.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                Log.d(TAG,"onAdLeftApplication");
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                Log.d(TAG,"onAdClosed");
+// Code to be executed when when the interstitial ad is closed.
+            }
+        });
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                // Load the next interstitial.
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+
+        });
+    }
+    public static void deleteCache(Context context) {
+        try {
+            File dir = context.getCacheDir();
+            deleteDir(dir);
+        } catch (Exception e) {}
     }
 
+    public static boolean deleteDir(File dir) {
+        if (dir != null && dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i = 0; i < children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
+                }
+            }
+            return dir.delete();
+        } else if(dir!= null && dir.isFile()) {
+            return dir.delete();
+        } else {
+            return false;
+        }
+    }
 
     @TargetApi(19)
     private void setTranslucentStatus(boolean on) {
@@ -366,4 +492,63 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
         super.onDestroy();
     }
 
+    void clearCache()
+    {
+        if (mClearCacheObserver == null)
+        {
+            mClearCacheObserver=new CachePackageDataObserver();
+        }
+
+        PackageManager mPM=getPackageManager();
+
+        @SuppressWarnings("rawtypes")
+        final Class[] classes= { Long.TYPE, IPackageDataObserver.class };
+
+        Long localLong=Long.valueOf(CACHE_APP);
+
+        try
+        {
+            Method localMethod=
+                    mPM.getClass().getMethod("freeStorageAndNotify", classes);
+
+            /*
+             * Start of inner try-catch block
+             */
+            try
+            {
+                localMethod.invoke(mPM, localLong, mClearCacheObserver);
+            }
+            catch (IllegalArgumentException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            catch (IllegalAccessException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            catch (InvocationTargetException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            /*
+             * End of inner try-catch block
+             */
+        }
+        catch (NoSuchMethodException e1)
+        {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }//End of clearCache() method
+
+    private class CachePackageDataObserver extends IPackageDataObserver.Stub
+    {
+        public void onRemoveCompleted(String packageName, boolean succeeded)
+        {
+
+        }//End of onRemoveCompleted() method
+    }//End of CachePackageDataObserver instance inner class
 }
