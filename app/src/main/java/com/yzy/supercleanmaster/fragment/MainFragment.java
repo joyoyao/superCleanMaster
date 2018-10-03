@@ -1,15 +1,20 @@
 package com.yzy.supercleanmaster.fragment;
 
 import android.app.ActivityManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +24,7 @@ import com.yzy.supercleanmaster.base.BaseFragment;
 import com.yzy.supercleanmaster.model.SDCardInfo;
 import com.yzy.supercleanmaster.ui.AutoStartManageActivity;
 import com.yzy.supercleanmaster.ui.BatterySavingActivity;
+import com.yzy.supercleanmaster.ui.MainActivity;
 import com.yzy.supercleanmaster.ui.MemoryCleanActivity;
 import com.yzy.supercleanmaster.ui.RubbishCleanActivity;
 import com.yzy.supercleanmaster.ui.ShortCutActivity;
@@ -34,6 +40,8 @@ import java.util.TimerTask;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+
+import static com.tencent.open.utils.Global.getPackageName;
 
 
 public class MainFragment extends BaseFragment {
@@ -67,7 +75,18 @@ public class MainFragment extends BaseFragment {
         return view;
     }
 
+    public void notification(){
+        Intent i = new Intent(getContext(), MainActivity.class);
+        PendingIntent rootPendingIntent = PendingIntent.getBroadcast(getContext(), 0, i, 0);
+        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.notification);
+        remoteViews.setTextViewText(R.id.textView, "Custom notification text");
+        remoteViews.setOnClickPendingIntent(R.id.root, rootPendingIntent);
 
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getContext())
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setCustomContentView(remoteViews)
+                .setStyle(new NotificationCompat.DecoratedCustomViewStyle());
+    }
     @Override
     public void onResume() {
         super.onResume();
@@ -156,36 +175,30 @@ public class MainFragment extends BaseFragment {
 
     @OnClick(R.id.card1)
     void speedUp() {
+       // notifications();
         startActivity(MemoryCleanActivity.class);
     }
 
 
     @OnClick(R.id.card2)
     void rubbishClean() {
+       // notifications();
+
         startActivity(RubbishCleanActivity.class);
     }
 
     @OnClick(R.id.card3)
     void batterySaving() {
-     //  List<ApplicationInfo> packages;
-     //  PackageManager pm;
-     //  pm = getPackageManager();
-     //  //get a list of installed apps.
-     //  packages = pm.getInstalledApplications(0);
+       // notifications();
+        Log.d("proc", "save buttery init");
+        amKillProcess("com.yzy.supercleanmaster");
 
-     //  ActivityManager mActivityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
-
-     //  for (ApplicationInfo packageInfo : packages) {
-     //      if((packageInfo.flags & ApplicationInfo.FLAG_SYSTEM)==1)continue;
-     //      if(packageInfo.packageName.equals("mypackage")) continue;
-     //      mActivityManager.killBackgroundProcesses(packageInfo.packageName);
-     //  }
-     //   startActivity(ShortCutActivity.class);
     }
 
 
     @OnClick(R.id.card4)
     void SoftwareManage() {
+       // notifications();
         startActivity(SoftwareManageActivity.class);
     }
 
@@ -195,6 +208,18 @@ public class MainFragment extends BaseFragment {
         ButterKnife.reset(this);
     }
 
+    public void amKillProcess(String process) {
+        ActivityManager am = (ActivityManager) getActivity().getSystemService(Context.ACTIVITY_SERVICE);
+        Log.d("proc", "activity init");
+        final List<ActivityManager.RunningAppProcessInfo> runningProcesses = am.getRunningAppProcesses();
+        Log.d("proc", "" + runningProcesses.size());
+        for (ActivityManager.RunningAppProcessInfo runningProcess : runningProcesses) {
+            if (!runningProcess.processName.equals(process)) {
+                Log.d("proc", runningProcess.processName);
+                android.os.Process.sendSignal(runningProcess.pid, android.os.Process.SIGNAL_KILL);
+            }
+        }
+    }
 
     @Override
     public void onDestroy() {

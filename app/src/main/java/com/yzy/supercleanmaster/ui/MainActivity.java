@@ -79,7 +79,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         // TODO Auto-generated method stub
         ab = getActionBar();
         ab.setDisplayHomeAsUpEnabled(true);// 给home icon的左边加上一个返回的图标
-        ab.setHomeButtonEnabled(true);// 需要api level 14 使用home-icon 可点击
+        ab.setHomeButtonEnabled(true);     // 需要api level 14 使用home-icon 可点击
 
         drawerArrow = new DrawerArrowDrawable(this) {
             @Override

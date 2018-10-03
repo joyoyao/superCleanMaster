@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="app_name">Название</string>
+    <string name="app_name">Your Master Cleaner</string>
     <string name="short_cut_name">Однократное ускорение</string>
     <string name="hello_world">Привет мир!</string>
     <string name="action_settings">Настройки</string>

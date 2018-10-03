@@ -3,13 +3,16 @@ package com.yzy.supercleanmaster.ui;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.yzy.supercleanmaster.R;
 import com.yzy.supercleanmaster.base.BaseActivity;
+import com.yzy.supercleanmaster.fragment.MainFragment;
 import com.yzy.supercleanmaster.service.CleanerService;
 import com.yzy.supercleanmaster.service.CoreService;
 import com.yzy.supercleanmaster.utils.SharedPreferencesUtils;
@@ -25,6 +28,7 @@ public class SplishActivity extends BaseActivity {
     private Animation mFadeIn;
     private Animation mFadeInScale;
     private Animation mFadeOut;
+    private Button BtnStart;
 
     //  @InjectView(R.id.image)
     ImageView mImageView;
@@ -36,12 +40,21 @@ public class SplishActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splish);
         mImageView = (ImageView) findViewById(R.id.image);
-        int index = new Random().nextInt(2);
-        if (index == 1) {
-            mImageView.setImageResource(R.drawable.entrance3);
-        } else {
-            mImageView.setImageResource(R.drawable.entrance2);
-        }
+        BtnStart = (Button) findViewById(R.id.start_main);
+        //int index = new Random().nextInt(2);
+        //if (index == 1) {
+        //    mImageView.setImageResource(R.drawable.entrance3);
+        //} else {
+        //    mImageView.setImageResource(R.drawable.entrance2);
+        //}
+        View.OnClickListener OclBtnStart = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        };
+        BtnStart.setOnClickListener(OclBtnStart);
         startService(new Intent(this, CoreService.class));
         startService(new Intent(this, CleanerService.class));
 
@@ -50,8 +63,8 @@ public class SplishActivity extends BaseActivity {
             createShortCut();
         }
 
-        initAnim();
-        setListener();
+       // initAnim();
+//        setListener();
     }
 
     private void createShortCut() {
@@ -77,61 +90,61 @@ public class SplishActivity extends BaseActivity {
         mFadeInScale.setDuration(2000);
         mFadeOut = AnimationUtils.loadAnimation(this, R.anim.welcome_fade_out);
         mFadeOut.setDuration(500);
-        mImageView.startAnimation(mFadeIn);
+//        mImageView.startAnimation(mFadeIn);
     }
 
 
     /**
      * 监听事件
      */
-    public void setListener() {
-        /**
-         * 动画切换原理:开始时是用第一个渐现动画,当第一个动画结束时开始第二个放大动画,当第二个动画结束时调用第三个渐隐动画,
-         * 第三个动画结束时修改显示的内容并且重新调用第一个动画,从而达到循环效果
-         */
-        mFadeIn.setAnimationListener(new AnimationListener() {
+ // public void setListener() {
+ //     /**
+ //      * 动画切换原理:开始时是用第一个渐现动画,当第一个动画结束时开始第二个放大动画,当第二个动画结束时调用第三个渐隐动画,
+ //      * 第三个动画结束时修改显示的内容并且重新调用第一个动画,从而达到循环效果
+ //      */
+ //     mFadeIn.setAnimationListener(new AnimationListener() {
 
-            public void onAnimationStart(Animation animation) {
+ //         public void onAnimationStart(Animation animation) {
 
-            }
+ //         }
 
-            public void onAnimationRepeat(Animation animation) {
+ //         public void onAnimationRepeat(Animation animation) {
 
-            }
+ //         }
 
-            public void onAnimationEnd(Animation animation) {
-                mImageView.startAnimation(mFadeInScale);
-            }
-        });
-        mFadeInScale.setAnimationListener(new AnimationListener() {
+ //         public void onAnimationEnd(Animation animation) {
+ //             mImageView.startAnimation(mFadeInScale);
+ //         }
+ //     });
+ //     mFadeInScale.setAnimationListener(new AnimationListener() {
 
-            public void onAnimationStart(Animation animation) {
+ //         public void onAnimationStart(Animation animation) {
 
-            }
+ //         }
 
-            public void onAnimationRepeat(Animation animation) {
+ //         public void onAnimationRepeat(Animation animation) {
 
-            }
+ //         }
 
-            public void onAnimationEnd(Animation animation) {
-                startActivity(MainActivity.class);
-                finish();
-                // mImageView.startAnimation(mFadeOut);
-            }
-        });
-        mFadeOut.setAnimationListener(new AnimationListener() {
+ //         public void onAnimationEnd(Animation animation) {
+ //             startActivity(MainActivity.class);
+ //             finish();
+ //             // mImageView.startAnimation(mFadeOut);
+ //         }
+ //     });
+ //     mFadeOut.setAnimationListener(new AnimationListener() {
 
-            public void onAnimationStart(Animation animation) {
+ //         public void onAnimationStart(Animation animation) {
 
-            }
+ //         }
 
-            public void onAnimationRepeat(Animation animation) {
+ //         public void onAnimationRepeat(Animation animation) {
 
-            }
+ //         }
 
-            public void onAnimationEnd(Animation animation) {
-                // startActivity(MainActivity.class);
-            }
-        });
-    }
+ //         public void onAnimationEnd(Animation animation) {
+ //             // startActivity(MainActivity.class);
+ //         }
+ //     });
+ // }
 }

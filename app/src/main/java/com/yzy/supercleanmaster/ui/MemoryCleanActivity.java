@@ -31,6 +31,7 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.john.waveview.WaveView;
 import com.nhaarman.listviewanimations.appearance.simple.SwingBottomInAnimationAdapter;
 import com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.OnDismissCallback;
+import com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeDismissAdapter;
 import com.yzy.supercleanmaster.R;
 import com.yzy.supercleanmaster.adapter.ClearMemoryAdapter;
 import com.yzy.supercleanmaster.base.BaseSwipeBackActivity;
@@ -218,16 +219,16 @@ public class MemoryCleanActivity extends BaseSwipeBackActivity implements OnDism
             header.setVisibility(View.GONE);
             bottom_lin.setVisibility(View.GONE);
         }
-//        mClearMemoryAdapter = new ClearMemoryAdapter(mContext,
-//                apps);  mClearMemoryAdapter = new ClearMemoryAdapter(mContext,
-//                apps);
-//        swingBottomInAnimationAdapter = new SwingBottomInAnimationAdapter(new SwipeDismissAdapter(mClearMemoryAdapter, MemoryCleanActivity.this));
-//        swingBottomInAnimationAdapter.setAbsListView(mListView);
-//        assert swingBottomInAnimationAdapter.getViewAnimator() != null;
-//        swingBottomInAnimationAdapter.getViewAnimator().setInitialDelayMillis(INITIAL_DELAY_MILLIS);
+     //   mClearMemoryAdapter = new ClearMemoryAdapter(mContext,
+     //           apps);  mClearMemoryAdapter = new ClearMemoryAdapter(mContext,
+     //           apps);
+     //   swingBottomInAnimationAdapter = new SwingBottomInAnimationAdapter(new SwipeDismissAdapter(mClearMemoryAdapter, MemoryCleanActivity.this));
+     //   swingBottomInAnimationAdapter.setAbsListView(mListView);
+     //   assert swingBottomInAnimationAdapter.getViewAnimator() != null;
+     //   swingBottomInAnimationAdapter.getViewAnimator().setInitialDelayMillis(INITIAL_DELAY_MILLIS);
 //
-//        mListView.setAdapter(swingBottomInAnimationAdapter);
-        //clearMem.setText("200M");
+     //   mListView.setAdapter(swingBottomInAnimationAdapter);
+     //   clearMem.setText("200M");
 
 
     }

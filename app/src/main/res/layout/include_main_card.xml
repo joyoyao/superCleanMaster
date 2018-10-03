@@ -3,7 +3,7 @@
     xmlns:card="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/card_normal"
+    android:background="#E5E5E5"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,19 +18,20 @@
             android:background="#19000000" />
 
         <RelativeLayout
-        android:id="@+id/card2"
-        android:layout_width="0.0dip"
-        android:layout_height="fill_parent"
-        android:layout_weight="1.0">
+            android:id="@+id/card2"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
 
 
-        <com.yzy.supercleanmaster.views.ItemCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            card:card_image="@drawable/card_icon_trash"
-            card:card_name="Уборка мусора" />
-    </RelativeLayout>
+            <com.yzy.supercleanmaster.views.ItemCardView
+                android:layout_width="225dp"
+                android:layout_height="209dp"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                card:card_image="@drawable/card_icon_trash"
+                card:card_name="Уборка мусора" />
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -54,9 +55,10 @@
             android:layout_weight="1.0">
 
             <com.yzy.supercleanmaster.views.ItemCardView
-                android:layout_width="wrap_content"
+                android:layout_width="74dp"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:gravity="center"
                 card:card_image="@drawable/card_icon_speedup"
                 card:card_name="Ускорение телефона" />
         </RelativeLayout>
@@ -68,10 +70,10 @@
             android:layout_weight="1.0">
 
             <com.yzy.supercleanmaster.views.ItemCardView
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="91dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
+                android:gravity="center"
                 card:card_image="@drawable/card_icon_autorun"
                 card:card_name="Экономия энергии" />
         </RelativeLayout>
@@ -84,9 +86,10 @@
 
 
             <com.yzy.supercleanmaster.views.ItemCardView
-                android:layout_width="wrap_content"
+                android:layout_width="71dp"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:gravity="center"
                 card:card_image="@drawable/card_icon_media"
                 card:card_name="@string/app_software_manage" />
 
