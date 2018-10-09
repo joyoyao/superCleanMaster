@@ -147,10 +147,12 @@
     <orderEntry type="library" name="Gradle: com.github.castorflex.smoothprogressbar:library-circular-1.0.0" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:common:1.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\vladz\AndroidStudioProjects\superCleanMaster\app\libs\SocialSDK_WeiXin_2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.installreferrer:installreferrer-1.0" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\vladz\AndroidStudioProjects\superCleanMaster\app\libs\umeng_social_sdk.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-15.0.1" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\vladz\AndroidStudioProjects\superCleanMaster\app\libs\nineoldandroids-2.4.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\vladz\AndroidStudioProjects\superCleanMaster\app\libs\SocialSDK_sms.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.yandex.android:mobmetricalib-3.2.2" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:27.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\vladz\AndroidStudioProjects\superCleanMaster\app\libs\SocialSDK_QQZone_2.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:customtabs-26.1.0" level="project" />

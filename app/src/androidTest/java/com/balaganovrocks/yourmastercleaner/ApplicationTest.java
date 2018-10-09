@@ -1,4 +1,4 @@
-package com.yzy.supercleanmaster;
+package com.balaganovrocks.yourmastercleaner;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

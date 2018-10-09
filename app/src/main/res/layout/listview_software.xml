@@ -49,7 +49,7 @@
     </LinearLayout>
 
 
-    <com.yzy.supercleanmaster.views.RippleView
+    <com.balaganovrocks.yourmastercleaner.views.RippleView
         android:id="@+id/riple_uninstall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,6 +69,6 @@
             android:text="Удалить"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_middle" />
-    </com.yzy.supercleanmaster.views.RippleView>
+    </com.balaganovrocks.yourmastercleaner.views.RippleView>
 </LinearLayout>
 
