@@ -29,6 +29,7 @@ import com.yzy.supercleanmaster.ui.MemoryCleanActivity;
 import com.yzy.supercleanmaster.ui.RubbishCleanActivity;
 import com.yzy.supercleanmaster.ui.ShortCutActivity;
 import com.yzy.supercleanmaster.ui.SoftwareManageActivity;
+import com.yzy.supercleanmaster.ui.settings;
 import com.yzy.supercleanmaster.utils.AppUtil;
 import com.yzy.supercleanmaster.utils.StorageUtil;
 import com.yzy.supercleanmaster.widget.circleprogress.ArcProgress;
@@ -55,7 +56,7 @@ public class MainFragment extends BaseFragment {
     TextView capacity;
 
     Context mContext;
-
+    Button BtnSettigs;
     private Timer timer;
     private Timer timer2;
     Button CleanRubbish;
@@ -71,8 +72,18 @@ public class MainFragment extends BaseFragment {
 
         ButterKnife.inject(this, view);
         mContext = getActivity();
-
+        BtnSettigs = (Button) view.findViewById(R.id.btnSettings);
+        BtnSettigs.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(v.getContext(), settings.class);
+                startActivityForResult(intent, 0); // do something
+            }
+        });
         return view;
+
     }
 
     public void notification(){

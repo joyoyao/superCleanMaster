@@ -131,6 +131,7 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-27.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable-27.0.0" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\vladz\AndroidStudioProjects\superCleanMaster\app\libs\SocialSDK_Sina.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-1.1.3" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\vladz\AndroidStudioProjects\superCleanMaster\app\libs\SocialSDK_laiwang_2.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils-27.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-ui-27.0.0" level="project" />
@@ -154,6 +155,7 @@
     <orderEntry type="library" name="Gradle: __local_aars__:C.\Users\vladz\AndroidStudioProjects\superCleanMaster\app\libs\SocialSDK_QQZone_2.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:customtabs-26.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.hannesdorfmann.smoothprogressbar:library-1.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.1.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.jakewharton:butterknife:6.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime-1.0.0" level="project" />
     <orderEntry type="module" module-name="library" />

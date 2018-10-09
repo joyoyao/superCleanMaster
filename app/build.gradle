@@ -40,4 +40,5 @@ dependencies {
     implementation files('libs/SocialSDK_laiwang_2.jar')
     implementation files('libs/SocialSDK_QQZone_1.jar')
     implementation 'com.android.support:support-v4:27.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }

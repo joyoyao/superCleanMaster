@@ -2,7 +2,9 @@ package com.yzy.supercleanmaster.ui;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
@@ -39,6 +41,7 @@ public class SplishActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splish);
+
         mImageView = (ImageView) findViewById(R.id.image);
         BtnStart = (Button) findViewById(R.id.start_main);
         //int index = new Random().nextInt(2);
@@ -48,8 +51,10 @@ public class SplishActivity extends BaseActivity {
         //    mImageView.setImageResource(R.drawable.entrance2);
         //}
         View.OnClickListener OclBtnStart = new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                buttonEffect(BtnStart);
                 Intent intent = new Intent(v.getContext(), MainActivity.class);
                 startActivityForResult(intent, 0);
             }
@@ -66,7 +71,26 @@ public class SplishActivity extends BaseActivity {
        // initAnim();
 //        setListener();
     }
+    public static void buttonEffect(View button){
+        button.setOnTouchListener(new View.OnTouchListener() {
 
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN: {
+                        v.getBackground().setColorFilter(0xe0f47521, PorterDuff.Mode.SRC_ATOP);
+                        v.invalidate();
+                        break;
+                    }
+                    case MotionEvent.ACTION_UP: {
+                        v.getBackground().clearColorFilter();
+                        v.invalidate();
+                        break;
+                    }
+                }
+                return false;
+            }
+        });
+    }
     private void createShortCut() {
         // TODO Auto-generated method stub
         Intent intent = new Intent();

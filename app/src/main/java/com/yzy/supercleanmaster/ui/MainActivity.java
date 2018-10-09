@@ -67,9 +67,9 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
         onNavigationDrawerItemSelected(0);
         initDrawer();
-        MobileAds.initialize(this, "ca-app-pub-3982529297840521~5735971553");
+        MobileAds.initialize(this, "ca-app-pub-4369038195513432~6470869076");
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-4369038195513432/2986510514");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
     }

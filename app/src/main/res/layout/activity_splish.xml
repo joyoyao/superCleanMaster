@@ -67,10 +67,10 @@
     <Button
         android:id="@+id/start_main"
         android:layout_width="149dp"
-        android:layout_height="79dp"
+        android:layout_height="66dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="131dp"
+        android:layout_marginBottom="134dp"
         android:background="@drawable/start"
         android:text="Старт" />
 

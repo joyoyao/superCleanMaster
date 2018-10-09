@@ -7,13 +7,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:background="#E5E5E5"
-        android:layout_weight="0.3">
+        android:layout_height="88dp"
+        android:layout_weight="0.3"
+        android:background="#E5E5E5">
 
         <RelativeLayout
             android:layout_width="335dp"
-            android:layout_height="223dp"
+            android:layout_height="170dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true">
 
@@ -26,7 +26,7 @@
                 <com.yzy.supercleanmaster.widget.circleprogress.ArcProgress
                     android:id="@+id/arc_store"
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="match_parent"
 
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
@@ -64,14 +64,12 @@
                 custom:arc_text_size="30dip" />
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:id="@+id/btnSettings"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="21dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/settings" />
+                android:layout_alignTop="@+id/arc_left"
+                android:background="@drawable/setting_icon_normal" />
         </RelativeLayout>
 
 
@@ -100,7 +98,8 @@
             layout="@layout/include_main_card"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp" />
     </RelativeLayout>
 
 
