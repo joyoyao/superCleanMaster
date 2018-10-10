@@ -1,4 +1,4 @@
-package com.yzy.supercleanmaster.adapter;
+package com.balaganovrocks.yourmastercleaner.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,21 +10,21 @@ import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.yzy.supercleanmaster.R;
-import com.yzy.supercleanmaster.bean.AppProcessInfo;
-import com.yzy.supercleanmaster.utils.StorageUtil;
+import com.balaganovrocks.yourmastercleaner.R;
+import com.balaganovrocks.yourmastercleaner.bean.AppProcessInfo;
+import com.balaganovrocks.yourmastercleaner.utils.StorageUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClearMemoryAdapter extends BaseAdapter {
+public class BatterySavingAdapter extends BaseAdapter {
 
     public List<AppProcessInfo> mlistAppInfo;
     LayoutInflater infater = null;
     private Context mContext;
     public static List<Integer> clearIds;
 
-    public ClearMemoryAdapter(Context context, List<AppProcessInfo> apps) {
+    public BatterySavingAdapter(Context context, List<AppProcessInfo> apps) {
         infater = LayoutInflater.from(context);
         mContext = context;
         clearIds = new ArrayList<Integer>();
@@ -53,15 +53,15 @@ public class ClearMemoryAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
         if (convertView == null) {
-            convertView = infater.inflate(R.layout.listview_memory_clean,
+            convertView = infater.inflate(R.layout.listview_battery_saving,
                     null);
             holder = new ViewHolder();
             holder.appIcon = (ImageView) convertView
                     .findViewById(R.id.image);
             holder.appName = (TextView) convertView
                     .findViewById(R.id.name);
-            holder.memory = (TextView) convertView
-                    .findViewById(R.id.memory);
+           // holder.memory = (TextView) convertView
+           //         .findViewById(R.id.memory);
 
             holder.cb = (RadioButton) convertView
                     .findViewById(R.id.choice_radio);
@@ -72,7 +72,7 @@ public class ClearMemoryAdapter extends BaseAdapter {
         final AppProcessInfo appInfo = (AppProcessInfo) getItem(position);
         holder.appIcon.setImageDrawable(appInfo.icon);
         holder.appName.setText(appInfo.appName);
-        holder.memory.setText(StorageUtil.convertStorage(appInfo.memory));
+//        holder.memory.setText(StorageUtil.convertStorage(appInfo.memory));
         if (appInfo.checked) {
             holder.cb.setChecked(true);
         } else {
@@ -111,3 +111,4 @@ public class ClearMemoryAdapter extends BaseAdapter {
     }
 
 }
+

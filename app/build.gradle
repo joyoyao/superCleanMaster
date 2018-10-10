@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.balaganovrocks.yourmastercleaner"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 27
         versionCode 3
         versionName "1.0"
@@ -27,6 +27,7 @@ dependencies {
     // Опционально. Библиотека Play Install Referrer.
     implementation 'com.android.installreferrer:installreferrer:1.0'
     implementation 'com.android.support:appcompat-v7:27.0.0'
+    implementation "com.android.support:support-compat:27.0.0"
     implementation 'com.jakewharton:butterknife:6.0.0'
     implementation 'com.nhaarman.listviewanimations:lib-core:3.1.0@aar'
     implementation 'com.nhaarman.listviewanimations:lib-manipulation:3.1.0@aar'

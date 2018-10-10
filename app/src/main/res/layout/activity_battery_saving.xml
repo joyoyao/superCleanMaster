@@ -1,23 +1,25 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:wave="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:counter="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_container1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
 
+    >
 
     <RelativeLayout
+        android:id="@+id/layout_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="80dip"
-            android:background="@color/title_bg"
+            android:layout_height="100dip"
             android:visibility="gone"
+            android:background="@color/title_bg"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -29,8 +31,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textCounter"
-                    android:textSize="48sp"
-                    android:text="250"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:text="Перевести выбранные приложения в спящий режим"
                     android:textColor="@color/white"
                     counter:autoStart="false" />
 
@@ -41,54 +44,42 @@
                     android:id="@+id/sufix"
                     android:layout_width="wrap_content"
                     android:textColor="@color/white"
-                    android:text="KB"
                     android:textSize="@dimen/text_size_middle"
                     android:layout_height="wrap_content" />
-
                 <TextView
                     android:layout_marginLeft="@dimen/margin_right"
                     android:layout_marginTop="10dip"
                     android:layout_toRightOf="@+id/textCounter"
                     android:layout_below="@+id/sufix"
                     android:layout_width="wrap_content"
-
                     android:textColor="@color/white"
-                    android:text="Может быть усыплено"
                     android:textSize="@dimen/text_size_middle"
                     android:layout_height="wrap_content" />
 
             </RelativeLayout>
-
 
         </RelativeLayout>
 
         <ListView
             android:layout_below="@+id/header"
             android:id="@+id/listview"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:fastScrollEnabled="true"
             android:focusable="true"
             android:listSelector="@android:color/transparent"
             android:scrollbars="none"
+            android:background="#e2e2e2"
             android:clipToPadding="false"
             android:divider="@null"
             android:dividerHeight="4dp"
             android:fadingEdge="none"
             android:fitsSystemWindows="true"
+            android:padding="12dp"
             android:scrollbarStyle="outsideOverlay"
-            android:padding="12dp" />
-
-        <TextView
-            android:id="@+id/empty"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:text="@string/saving_battery"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            tools:ignore="overdraw" />
 
         <LinearLayout
-
             android:visibility="gone"
             android:orientation="horizontal"
             android:id="@+id/bottom_lin"
@@ -98,18 +89,18 @@
 
             <Button
                 android:id="@+id/clear_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_margin="8dip"
                 android:background="@drawable/btn_normal_green"
-                android:gravity="center"
-                android:text="Усыпить"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_size_large" />
+                android:textSize="@dimen/text_size_large"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:text="Перевести в спящий режим"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
-    </RelativeLayout>
 
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/progressBar"
