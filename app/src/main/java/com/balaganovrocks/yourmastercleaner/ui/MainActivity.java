@@ -3,6 +3,7 @@ package com.balaganovrocks.yourmastercleaner.ui;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.NotificationManager;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,7 +17,10 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.balaganovrocks.yourmastercleaner.base.BaseActivity;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.ikimuhendis.ldrawer.ActionBarDrawerToggle;
@@ -56,6 +60,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
     MainFragment mMainFragment;
     RelaxFragment mRelaxFragment;
+
     public static final long TWO_SECOND = 2 * 1000;
     long preTime;
     @Override
@@ -73,7 +78,8 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-4369038195513432/2986510514");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
+        MyApp myApp = new MyApp();
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
 
@@ -115,6 +121,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 //        getMenuInflater().inflate(R.menu.main, menu);
 //        return true;
 //    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -264,5 +271,9 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         }
 
         return super.onKeyDown(keyCode, event);
+    }
+    public void listener(){
+
+
     }
 }

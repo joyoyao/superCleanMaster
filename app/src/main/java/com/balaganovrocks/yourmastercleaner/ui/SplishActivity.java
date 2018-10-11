@@ -1,6 +1,7 @@
 package com.balaganovrocks.yourmastercleaner.ui;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -68,6 +69,7 @@ public class SplishActivity extends BaseActivity {
 
        // initAnim();
 //        setListener();
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
     public static void buttonEffect(View button){
         button.setOnTouchListener(new View.OnTouchListener() {

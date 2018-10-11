@@ -211,6 +211,7 @@ public class CleanerService extends Service {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
+
     }
 
     @Override

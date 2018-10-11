@@ -7,6 +7,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageDataObserver;
 import android.content.pm.PackageInfo;
@@ -165,6 +166,7 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     @Override
@@ -424,14 +426,17 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
 // Code to be executed when when the interstitial ad is closed.
             }
         });
-        mInterstitialAd.setAdListener(new AdListener() {
+            mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
                 // Load the next interstitial.
                 mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                Intent intent = new Intent(getBaseContext(), ResultActivity.class);
+                startActivityForResult(intent, 0); // do something
             }
 
         });
+
     }
     public static void deleteCache(Context context) {
         try {

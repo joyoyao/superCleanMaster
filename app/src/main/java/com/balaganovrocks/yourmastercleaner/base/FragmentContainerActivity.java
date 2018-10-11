@@ -3,6 +3,7 @@ package com.balaganovrocks.yourmastercleaner.base;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
@@ -75,6 +76,7 @@ public class FragmentContainerActivity extends BaseSwipeBackActivity {
                 finish();
                 return;
             }
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
 
         super.onCreate(savedInstanceState);

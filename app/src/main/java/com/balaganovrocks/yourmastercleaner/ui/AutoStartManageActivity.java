@@ -2,6 +2,7 @@ package com.balaganovrocks.yourmastercleaner.ui;
 
 import android.annotation.TargetApi;
 import android.app.ActionBar;
+import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
@@ -65,7 +66,7 @@ public class AutoStartManageActivity extends BaseSwipeBackActivity {
 
         tabs.setViewPager(pager);
         setTabsValue();
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
 

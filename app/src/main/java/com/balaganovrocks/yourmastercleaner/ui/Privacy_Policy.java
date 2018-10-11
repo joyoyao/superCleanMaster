@@ -1,6 +1,7 @@
 package com.balaganovrocks.yourmastercleaner.ui;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -13,5 +14,6 @@ public class Privacy_Policy extends Activity {
         setContentView(R.layout.privacy_policy);
 
         TextView Text = (TextView) findViewById(R.id.privacy_policy);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 }

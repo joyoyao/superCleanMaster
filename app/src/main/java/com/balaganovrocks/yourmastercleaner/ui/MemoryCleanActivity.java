@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -126,6 +127,7 @@ public class MemoryCleanActivity extends BaseSwipeBackActivity implements OnDism
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     @Override
@@ -305,10 +307,12 @@ public class MemoryCleanActivity extends BaseSwipeBackActivity implements OnDism
             @Override
             public void onAdClosed() {
                 Log.d(TAG,"onAdClosed");
+                Intent intent = new Intent(getBaseContext(), ResultActivity.class);
+                startActivityForResult(intent, 0);
 // Code to be executed when when the interstitial ad is closed.
             }
         });
-
+         // do something
     }
 
 

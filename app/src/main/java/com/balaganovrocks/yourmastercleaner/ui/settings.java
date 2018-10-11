@@ -2,6 +2,7 @@ package com.balaganovrocks.yourmastercleaner.ui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
@@ -26,7 +27,7 @@ public class settings extends Activity {
         // адаптер
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Button Exit = (Button) findViewById(R.id.exit);
         Button Privacy_Policy = (Button) findViewById(R.id.privacy_policy);
         Spinner spinner = (Spinner) findViewById(R.id.language);

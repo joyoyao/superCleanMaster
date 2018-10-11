@@ -1,5 +1,6 @@
 package com.balaganovrocks.yourmastercleaner.ui;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.util.Linkify;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ public class AboutActivity extends BaseSwipeBackActivity {
         Linkify.addLinks(tv, Linkify.ALL);
 
         subVersion.setText("V"+ AppUtil.getVersion(mContext));
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
 }

@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.ActivityInfo;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
@@ -121,6 +122,7 @@ public class ShortCutActivity extends BaseActivity implements CoreService.OnPeoc
                 R.anim.rotate_anim));
         bindService(new Intent(mContext, CoreService.class),
                 mServiceConnection, Context.BIND_AUTO_CREATE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     @Override
