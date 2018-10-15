@@ -59,7 +59,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         pVersion = findPreference("pVersion");
         pVersion.setOnPreferenceClickListener(this);
         pVersionDetail = findPreference("pVersionDetail");
-        pVersionDetail.setSummary("当前版本：" + AppUtil.getVersion(getActivity()));
+        pVersionDetail.setSummary("Текущая версия：" + AppUtil.getVersion(getActivity()));
         pVersionDetail.setOnPreferenceClickListener(this);
 
         pGithub = findPreference("pGithub");
@@ -84,7 +84,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
                 @Override
                 public void onUpdateReturned(int i, UpdateResponse updateResponse) {
                     if (i != 0) {
-                        T.showLong(getActivity(), "当前版本为最新版本！");
+                        T.showLong(getActivity(), "Текущая версия - последняя версия!");
                     }
 
                 }
@@ -107,7 +107,8 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     private void shareMyApp() {
 
         UMSocialService mController = UMServiceFactory.getUMSocialService("com.umeng.share", RequestType.SOCIAL);
-        mController.setShareContent("一键清理（开源版）一键清理手机进程，真心不错呀,推荐您使用！.");
+        mController.setShareContent("Очистка одним щелчком мыши (версия с открытым исходным кодом)" +
+                " одним щелчком мыши, чтобы очистить телефон, действительно хорошо, я рекомендую вам использовать!.");
         mController.openShare(getActivity(), false);
 
     }
@@ -132,7 +133,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         // TODO Auto-generated method stub
         Intent intent = new Intent();
         intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
-        intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, "一键加速");
+        intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, "Однократное ускорение");
         intent.putExtra("duplicate", false);
         intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, BitmapFactory.decodeResource(getResources(), R.drawable.short_cut_icon));
         Intent i = new Intent();
@@ -140,7 +141,8 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         i.addCategory("android.intent.category.DEFAULT");
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, i);
         getActivity().sendBroadcast(intent);
-        T.showLong(getActivity(), "“一键加速”快捷图标已创建");
+        T.showLong(getActivity(),
+                "Был создан значок ярлыка «Однократное ускорение»");
 
     }
 
@@ -154,7 +156,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         }
         // 没有安装市场
         else {
-            T.showLong(getActivity(),"无法打开应用市场");
+            T.showLong(getActivity(),"Не удалось открыть рынок приложений");
 
         }
     }

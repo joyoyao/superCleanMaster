@@ -621,7 +621,7 @@ public class AppUtil {
             }
         }
         if (process.memory == 0) {
-            L.d(AppUtil.class, "##" + processName + ",top -n 1未找到");
+            L.d(AppUtil.class, "##" + processName + ",top -n 1 не найден");
         }
         return process;
     }

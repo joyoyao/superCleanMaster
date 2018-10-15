@@ -45,7 +45,7 @@ import java.util.Locale;
 
 
 
-public class SlidingTab extends HorizontalScrollView {
+public class  SlidingTab extends HorizontalScrollView {
 
     public interface IconTabProvider {
         public int getPageIconResId(int position);

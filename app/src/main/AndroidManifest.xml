@@ -78,7 +78,7 @@
 
         <activity
             android:name="com.balaganovrocks.yourmastercleaner.ui.settings"
-            android:label="@string/app_memory_clean"
+            android:label="Настройки"
             android:theme="@style/MyTranslucentAppTheme" />
         <activity
             android:name="com.balaganovrocks.yourmastercleaner.ui.Exit"

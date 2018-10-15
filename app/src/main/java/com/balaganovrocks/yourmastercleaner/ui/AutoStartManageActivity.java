@@ -134,7 +134,8 @@ public class AutoStartManageActivity extends BaseSwipeBackActivity {
 
     public class MyPagerAdapter extends WeakFragmentPagerAdapter {
 
-        private final String[] TITLES = {"普通软件", "系统核心软件"};
+        private final String[] TITLES = {"Общее программное обеспечение",
+                "Системное программное обеспечение"};
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);

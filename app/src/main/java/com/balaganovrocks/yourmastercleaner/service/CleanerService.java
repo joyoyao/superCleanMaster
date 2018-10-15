@@ -29,7 +29,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class CleanerService extends Service {
 
-    public static final String ACTION_CLEAN_AND_EXIT = "com.yzy.cache.cleaner.CLEAN_AND_EXIT";
+    public static final String ACTION_CLEAN_AND_EXIT = "com.balaganovrocks.cache.cleaner.CLEAN_AND_EXIT";
 
     private static final String TAG = "CleanerService";
 

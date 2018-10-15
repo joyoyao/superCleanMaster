@@ -114,7 +114,7 @@ public class SoftwareManageFragment extends BaseFragment {
             topText.setText("");
 
         } else {
-            topText.setText("卸载下列软件，会影响正常使用");
+            topText.setText("При удалении следующих программ, возможно влияние на нормальную работоспособность телефона");
 
         }
 

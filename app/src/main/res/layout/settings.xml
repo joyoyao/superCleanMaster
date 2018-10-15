@@ -29,7 +29,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="86dp"
         android:background="@android:color/transparent"
-        android:text="Политика конфедициальности"
+        android:text="Политика конфидициальности"
         android:textStyle="bold" />
 
     <Button

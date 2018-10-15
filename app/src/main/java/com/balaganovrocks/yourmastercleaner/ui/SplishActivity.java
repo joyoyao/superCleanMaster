@@ -64,7 +64,7 @@ public class SplishActivity extends BaseActivity {
 
 
         if (!SharedPreferencesUtils.isShortCut(mContext)) {
-            createShortCut();
+         //   createShortCut();
         }
 
        // initAnim();
@@ -91,20 +91,20 @@ public class SplishActivity extends BaseActivity {
             }
         });
     }
-    private void createShortCut() {
-        // TODO Auto-generated method stub
-        Intent intent = new Intent();
-        intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
-        intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, "一键加速");
-        intent.putExtra("duplicate", false);
-        intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, BitmapFactory.decodeResource(getResources(), R.drawable.short_cut_icon));
-        Intent i = new Intent();
-        i.setAction("com.balaganovrocks.shortcut");
-        i.addCategory("android.intent.category.DEFAULT");
-        intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, i);
-        sendBroadcast(intent);
-        SharedPreferencesUtils.setIsShortCut(mContext, true);
-    }
+   // private void createShortCut() {
+   //     // TODO Auto-generated method stub
+   //     Intent intent = new Intent();
+   //     intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+   //     intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, "АААААА");
+   //     intent.putExtra("duplicate", false);
+   //     intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, BitmapFactory.decodeResource(getResources(), R.drawable.short_cut_icon));
+   //     Intent i = new Intent();
+   //     i.setAction("com.balaganovrocks.shortcut");
+   //     i.addCategory("android.intent.category.DEFAULT");
+   //     intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, i);
+   //     sendBroadcast(intent);
+   //     SharedPreferencesUtils.setIsShortCut(mContext, true);
+   // }
 
     private void initAnim() {
         mFadeIn = AnimationUtils.loadAnimation(this, R.anim.welcome_fade_in);

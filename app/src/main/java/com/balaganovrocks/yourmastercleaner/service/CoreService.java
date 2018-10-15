@@ -24,7 +24,7 @@ import java.util.List;
 
 public class CoreService extends Service {
 
-    public static final String ACTION_CLEAN_AND_EXIT = "com.yzy.service.cleaner.CLEAN_AND_EXIT";
+    public static final String ACTION_CLEAN_AND_EXIT = "com.balaganovrocks.service.cleaner.CLEAN_AND_EXIT";
 
     private static final String TAG = "CleanerService";
 

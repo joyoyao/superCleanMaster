@@ -33,11 +33,24 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
-        android:background="@drawable/goto_battey_saving"
+        android:background="@drawable/background"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adView" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="10dp"
+        android:layout_height="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/black_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/goto_memory_clean"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
         android:id="@+id/goto_memory_clean"
@@ -48,7 +61,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/goto_memory_clean"
+        android:background="@drawable/background"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,9 +76,206 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/goto_rate_app"
+        android:background="@drawable/back_for_rate"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goto_saving_battery" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/icon_saving_battery"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/goto_saving_battery"
+        app:layout_constraintTop_toTopOf="@+id/goto_saving_battery" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/icon_memory_clean"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/goto_memory_clean"
+        app:layout_constraintTop_toTopOf="@+id/goto_memory_clean" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/icon_rate"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/goto_rate_app"
+        app:layout_constraintTop_toTopOf="@+id/goto_rate_app" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Экономия энергии"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/goto_memory_clean"
+        app:layout_constraintTop_toTopOf="@+id/goto_memory_clean" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Ускорение телефона"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/goto_saving_battery"
+        app:layout_constraintTop_toTopOf="@+id/goto_saving_battery" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Выставить оценки"
+        android:textColor="@color/actionbar_title"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/goto_rate_app"
+        app:layout_constraintTop_toTopOf="@+id/goto_rate_app" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="153dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Экономьте заряд,усыпляя приложение одним нажатием"
+        android:textColor="#57556D"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/goto_memory_clean"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="152dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Устройство может работать быстрее. Оптимизируйте скорость"
+        android:textColor="#57556D"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/goto_saving_battery"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="46dp"
+        android:layout_height="12dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Проверить"
+        android:textColor="#009E0F"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/goto_memory_clean"
+        app:layout_constraintStart_toStartOf="@+id/goto_memory_clean"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="125dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Ваша поддержка - лучшая мотивация для нас!"
+        android:textColor="@color/actionbar_title"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="@+id/goto_rate_app"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="47dp"
+        android:layout_height="13dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Ускорить"
+        android:textColor="#009E0F"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/goto_saving_battery"
+        app:layout_constraintStart_toStartOf="@+id/goto_saving_battery"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="38dp"
+        android:layout_height="9dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Оценить"
+        android:textColor="#FFD707"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/goto_rate_app"
+        app:layout_constraintStart_toStartOf="@+id/goto_rate_app"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="10dp"
+        android:layout_height="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/black_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/goto_memory_clean"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="10dp"
+        android:layout_height="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/black_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/goto_saving_battery"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="10dp"
+        android:layout_height="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/whight_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/goto_rate_app"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 </android.support.constraint.ConstraintLayout>

@@ -23,7 +23,7 @@ public class AboutActivity extends BaseSwipeBackActivity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         getActionBar().setHomeButtonEnabled(true);
-        getActionBar().setTitle("关于");
+        getActionBar().setTitle("на");
         TextView tv = (TextView) findViewById(R.id.app_information);
         Linkify.addLinks(tv, Linkify.ALL);
 
