@@ -31,7 +31,7 @@
                 android:layout_alignParentTop="true"
                 android:gravity="center_horizontal"
                 card:card_image="@drawable/card_icon_trash"
-                card:card_name="Уборка мусора" >
+                card:card_name="@string/app_rublish_clean" >
 
             </com.balaganovrocks.yourmastercleaner.views.ItemCardView>
         </RelativeLayout>
@@ -59,11 +59,20 @@
 
             <com.balaganovrocks.yourmastercleaner.views.ItemCardView
                 android:layout_width="77dp"
-                android:layout_height="65dp"
+                android:layout_height="91dp"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 card:card_image="@drawable/card_icon_speedup"
-                card:card_name="Ускорение телефона" />
+                card:card_name="@string/Speed_up_your_phone" />
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="39dp"
+                android:background="@drawable/line" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -74,11 +83,20 @@
 
             <com.balaganovrocks.yourmastercleaner.views.ItemCardView
                 android:layout_width="70dp"
-                android:layout_height="91dp"
+                android:layout_height="97dp"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 card:card_image="@drawable/card_icon_autorun"
-                card:card_name="Экономия энергии" />
+                card:card_name="@string/Save_Battery" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="39dp"
+                android:background="@drawable/line" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -95,6 +113,15 @@
                 android:gravity="center"
                 card:card_image="@drawable/card_icon_media"
                 card:card_name="@string/app_software_manage" />
+
+            <Button
+                android:id="@+id/button16"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="39dp"
+                android:background="@drawable/line" />
 
 
         </RelativeLayout>

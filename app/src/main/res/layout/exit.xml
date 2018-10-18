@@ -16,7 +16,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/no_exit"
-        android:text="Нет, продолжить"
+        android:text="@string/No"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -31,7 +31,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/exit"
-        android:text="Да, закрыть"
+        android:text="@string/Yes"
         app:layout_constraintBottom_toTopOf="@+id/no_exit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

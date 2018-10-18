@@ -9,7 +9,7 @@
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="0dp"
-        android:layout_height="210dp"
+        android:layout_height="115dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="8dp"
@@ -18,7 +18,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        ads:adUnitId="ca-app-pub-4369038195513432/6031885373"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintHorizontal_bias="0.505"
         ads:layout_constraintStart_toStartOf="parent"
@@ -26,13 +26,13 @@
 
     <Button
         android:id="@+id/goto_saving_battery"
-        android:layout_width="220dp"
-        android:layout_height="80dp"
+        android:layout_width="300dp"
+        android:layout_height="110dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="140dp"
         android:background="@drawable/background"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,8 +54,8 @@
 
     <Button
         android:id="@+id/goto_memory_clean"
-        android:layout_width="220dp"
-        android:layout_height="80dp"
+        android:layout_width="300dp"
+        android:layout_height="110dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -69,8 +69,8 @@
 
     <Button
         android:id="@+id/goto_rate_app"
-        android:layout_width="220dp"
-        android:layout_height="80dp"
+        android:layout_width="300dp"
+        android:layout_height="110dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -120,13 +120,12 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
+        android:layout_width="198dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Экономия энергии"
-        android:textSize="12sp"
+        android:text="@string/Save_Battery"
         app:layout_constraintStart_toStartOf="@+id/goto_memory_clean"
         app:layout_constraintTop_toTopOf="@+id/goto_memory_clean" />
 
@@ -137,8 +136,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Ускорение телефона"
-        android:textSize="12sp"
+        android:text="@string/Speed_up_your_phone2"
         app:layout_constraintStart_toStartOf="@+id/goto_saving_battery"
         app:layout_constraintTop_toTopOf="@+id/goto_saving_battery" />
 
@@ -149,63 +147,62 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Выставить оценки"
+        android:text="@string/Please_rate_us"
         android:textColor="@color/actionbar_title"
-        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/goto_rate_app"
         app:layout_constraintTop_toTopOf="@+id/goto_rate_app" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="153dp"
-        android:layout_height="22dp"
+        android:layout_width="192dp"
+        android:layout_height="34dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Экономьте заряд,усыпляя приложение одним нажатием"
+        android:text="@string/Boost_battery_live_in_one_tap"
         android:textColor="#57556D"
-        android:textSize="8sp"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/goto_memory_clean"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="152dp"
-        android:layout_height="19dp"
+        android:layout_width="184dp"
+        android:layout_height="32dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Устройство может работать быстрее. Оптимизируйте скорость"
+        android:text="@string/Your_Android_can_work_faster_Optimize_its_speed"
         android:textColor="#57556D"
-        android:textSize="8sp"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/goto_saving_battery"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="46dp"
-        android:layout_height="12dp"
+        android:layout_width="55dp"
+        android:layout_height="14dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Проверить"
+        android:text="@string/Check"
         android:textColor="#009E0F"
-        android:textSize="8sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/goto_memory_clean"
         app:layout_constraintStart_toStartOf="@+id/goto_memory_clean"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="125dp"
-        android:layout_height="19dp"
+        android:layout_width="185dp"
+        android:layout_height="32dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Ваша поддержка - лучшая мотивация для нас!"
+        android:text="@string/Your_support_is_our_best_motivation"
         android:textColor="@color/actionbar_title"
-        android:textSize="8sp"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/goto_rate_app"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -217,25 +214,25 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Ускорить"
+        android:text="@string/Boost"
         android:textColor="#009E0F"
-        android:textSize="8sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/goto_saving_battery"
         app:layout_constraintStart_toStartOf="@+id/goto_saving_battery"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.684" />
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="38dp"
-        android:layout_height="9dp"
+        android:layout_width="50dp"
+        android:layout_height="14dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Оценить"
+        android:text="@string/Rate_this_app"
         android:textColor="#FFD707"
-        android:textSize="8sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/goto_rate_app"
         app:layout_constraintStart_toStartOf="@+id/goto_rate_app"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -257,14 +254,15 @@
         android:id="@+id/button6"
         android:layout_width="10dp"
         android:layout_height="5dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/black_arrow"
         app:layout_constraintBottom_toBottomOf="@+id/goto_saving_battery"
         app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button7"

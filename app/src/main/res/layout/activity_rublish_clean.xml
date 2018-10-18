@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
 
                     android:textColor="@color/white"
-                    android:text="Может быть очищен"
+                    android:text="@string/may_be_cleaned"
                     android:textSize="@dimen/text_size_middle"
                     android:layout_height="wrap_content" />
 
@@ -84,7 +84,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="center"
-            android:text="@string/empty_cache"
+            android:text="@string/Congratulations_Memory_cleaned"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <LinearLayout
@@ -103,7 +103,7 @@
                 android:layout_margin="8dip"
                 android:background="@drawable/btn_normal_green"
                 android:gravity="center"
-                android:text="Очистить"
+                android:text="@string/Speed_up"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_large" />
         </LinearLayout>

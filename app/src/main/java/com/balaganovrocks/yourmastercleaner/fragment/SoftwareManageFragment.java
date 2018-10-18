@@ -114,7 +114,7 @@ public class SoftwareManageFragment extends BaseFragment {
             topText.setText("");
 
         } else {
-            topText.setText("При удалении следующих программ, возможно влияние на нормальную работоспособность телефона");
+            topText.setText(R.string.Attention);
 
         }
 

@@ -33,7 +33,7 @@
                     android:id="@+id/textCounter"
                     android:textSize="20dp"
                     android:gravity="center"
-                    android:text="Перевести выбранные приложения в спящий режим"
+                    android:text="@string/Hybernate_selected_apps."
                     android:textColor="@color/white"
                     counter:autoStart="false" />
 
@@ -95,7 +95,7 @@
                 android:textSize="@dimen/text_size_large"
                 android:layout_width="match_parent"
                 android:gravity="center"
-                android:text="Перевести в спящий режим"
+                android:text="@string/Hybernate_apps"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 

@@ -52,7 +52,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         addPreferencesFromResource(R.xml.ui_settings);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         getActivity().getActionBar().setDisplayShowHomeEnabled(false);
-        getActivity().getActionBar().setTitle(R.string.title_settings);
+       // getActivity().getActionBar().setTitle(R.string.title_settings);
 
         createShortCut = findPreference("createShortCut");
         createShortCut.setOnPreferenceClickListener(this);

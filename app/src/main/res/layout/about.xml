@@ -89,7 +89,7 @@
                 android:paddingBottom="5dip"
                 android:paddingTop="5dip"
                 android:singleLine="false"
-                android:text="@string/app_information"
+                android:text="Hi"
                 android:textSize="15sp" />
 
 
@@ -152,7 +152,7 @@
                 android:gravity="bottom|center"
                 android:includeFontPadding="false"
                 android:singleLine="true"
-                android:text="@string/all_rights_reserved"
+                android:text="Hi"
                 android:textColor="#ffbbbbbb"
                 android:textSize="12.0sp" />
         </RelativeLayout>

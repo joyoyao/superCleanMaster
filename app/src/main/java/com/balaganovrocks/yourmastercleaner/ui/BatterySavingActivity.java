@@ -125,7 +125,7 @@ public class BatterySavingActivity extends BaseSwipeBackActivity implements OnDi
         textCounter.setIncrement(5f); // the amount the number increments at each time interval
         textCounter.setTimeInterval(50); // the time interval (ms) at which the text changes
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-4369038195513432/2986510514");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
@@ -269,7 +269,7 @@ public class BatterySavingActivity extends BaseSwipeBackActivity implements OnDi
             }
         }
         Allmemory = Allmemory - killAppmemory;
-        T.showLong(mContext, "Поздравляю, вы сэкономили заряд батареи");
+        T.showLong(mContext, R.string.saving_battery);
        // if (Allmemory > 0) {
        //     refeshTextCounter();
        // }

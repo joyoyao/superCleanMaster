@@ -74,7 +74,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 
         onNavigationDrawerItemSelected(0);
         initDrawer();
-        MobileAds.initialize(this, "ca-app-pub-4369038195513432~6470869076");
+        MobileAds.initialize(this, "ca-app-pub-4369038195513432/2986510514");
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-4369038195513432/2986510514");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
@@ -258,7 +258,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
             // 如果时间间隔大于2秒, 不处理
             if ((currentTime - preTime) > TWO_SECOND) {
                 // 显示消息
-                T.showShort(mContext, "再按一次退出应用程序");
+                T.showShort(mContext,R.string.back);
 
                 // 更新时间
                 preTime = currentTime;

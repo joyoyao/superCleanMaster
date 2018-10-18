@@ -13,7 +13,7 @@
 
         <RelativeLayout
             android:layout_width="335dp"
-            android:layout_height="173dp"
+            android:layout_height="177dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true">
 
@@ -29,7 +29,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    custom:arc_bottom_text="Занято памяти"
+                    custom:arc_bottom_text="@string/storage"
                     custom:arc_bottom_text_size="10dp"
                     custom:arc_progress="10"
                     custom:arc_stroke_width="8dip"
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="47dp"
+                    android:layout_marginBottom="49dp"
                     android:text="20/30"
                     android:textColor="#000000"
                     android:textSize="8dip" />
@@ -50,14 +50,15 @@
 
             <com.balaganovrocks.yourmastercleaner.widget.circleprogress.ArcProgress
                 android:id="@+id/arc_process"
-                android:layout_width="113dp"
+                android:layout_width="115dp"
                 android:layout_height="116dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
                 android:layout_marginEnd="36dp"
                 android:layout_marginRight="36dp"
-                custom:arc_bottom_text="Оперативная память"
-                custom:arc_bottom_text_size="8dp"
+                custom:arc_bottom_text="@string/RAM"
+                custom:arc_bottom_text_size="10dp"
                 custom:arc_progress="10"
                 custom:arc_stroke_width="6dip"
                 custom:arc_text_color="#000000"

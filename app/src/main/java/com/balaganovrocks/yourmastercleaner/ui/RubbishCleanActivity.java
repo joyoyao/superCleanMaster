@@ -164,7 +164,7 @@ public class RubbishCleanActivity extends BaseSwipeBackActivity implements OnDis
                 mServiceConnection, Context.BIND_AUTO_CREATE);
             // for android 6.0+
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-4369038195513432/2986510514");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }

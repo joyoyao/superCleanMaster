@@ -52,9 +52,9 @@
             android:label="@string/app_name"
             android:theme="@style/MyAppTheme" />
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.BatterySavingActivity"
-            android:label="@string/app_name"
-            android:theme="@style/MyAppTheme" />
+        android:name="com.balaganovrocks.yourmastercleaner.ui.BatterySavingActivity"
+        android:label="@string/app_name"
+        android:theme="@style/MyAppTheme" />
         <activity
             android:name="com.balaganovrocks.yourmastercleaner.ui.Privacy_Policy"
             android:label="@string/app_name"
@@ -73,7 +73,11 @@
         </activity>
         <activity
             android:name="com.balaganovrocks.yourmastercleaner.ui.MemoryCleanActivity"
-            android:label="@string/app_memory_clean"
+            android:label="@string/app_name"
+            android:theme="@style/MyTranslucentAppTheme" />
+        <activity
+            android:name="com.balaganovrocks.yourmastercleaner.ui.ChangeLanguage"
+            android:label="@string/app_name"
             android:theme="@style/MyTranslucentAppTheme" />
 
         <activity
@@ -82,21 +86,21 @@
             android:theme="@style/MyTranslucentAppTheme" />
         <activity
             android:name="com.balaganovrocks.yourmastercleaner.ui.Exit"
-            android:label="@string/app_memory_clean"
+            android:label="Продолжить"
             android:theme="@style/MyTranslucentAppTheme" />
         <activity
             android:name="com.balaganovrocks.yourmastercleaner.ui.ResultActivity"
-            android:label="@string/app_memory_clean"
+            android:label=""
             android:theme="@style/MyTranslucentAppTheme" />
 
         <activity
             android:name="com.balaganovrocks.yourmastercleaner.ui.RubbishCleanActivity"
-            android:label="@string/app_rublish_clean"
+            android:label="@string/app_name"
             android:theme="@style/MyTranslucentAppTheme" />
 
         <activity
             android:name="com.balaganovrocks.yourmastercleaner.ui.AutoStartManageActivity"
-            android:label="@string/app_autostart_manage"
+            android:label="@string/app_name"
             android:theme="@style/MyTranslucentAppTheme" />
 
         <activity

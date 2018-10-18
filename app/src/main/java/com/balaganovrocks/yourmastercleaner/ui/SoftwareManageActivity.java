@@ -135,7 +135,7 @@ public class SoftwareManageActivity extends BaseSwipeBackActivity {
 
     public class MyPagerAdapter extends WeakFragmentPagerAdapter {
 
-        private final String[] TITLES = {"Программы пользователя", "Системные программы"};
+        private final String[] TITLES = {"Пользовательские приложения", "Системные приложения"};
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);

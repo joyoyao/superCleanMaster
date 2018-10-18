@@ -13,16 +13,53 @@
     <string name="app_rublish_clean">Уборка мусора</string>
     <string name="app_autostart_manage">Управление самозапуском</string>
     <string name="app_software_manage">Удаление программ</string>
+    <string name="hybernate_apps">Перевести выбранные приложения в спящий режим</string>
+    <string name="start">Старт</string>
+    <string name="RAM">Оперативная Память</string>
+    <string name="Attention">Осторожно! Удаление системных приложений может привести к некорректной работе вашего телефона!</string>
+    <string name="Speed_up_your_phone">Ускорение телефона</string>
+    <string name="Speed_up_your_phone2">Ускорение телефона</string>
+    <string name="Remove_Apps">Удаление программ</string>
+    <string name="Settings">Настройки</string>
+    <string name="Language">Язык</string>
+    <string name="Privacy_Policy">Политика конфиденциальности</string>
+    <string name="Boost">Ускорить</string>
+    <string name="Cleaned">Очищено </string>
+    <string name="Storage"> Памяти</string>
+    <string name="back">Нажмите еще раз, чтобы выйти из приложения.</string>
+    <string name="User_Apps">Пользовательские приложения</string>
+    <string name="System_Apps">Системные приложения</string>
+    <string name="Remove">Удалить</string>
+    <string name="apps_installed">Ускорить</string>
+    <string name="Exit">Выход</string>
+    <string name="may_be_cleaned">Может быть очищен</string>
+    <string name="Remove_apps">Удаление приложений</string>
+    <string name="Yes">Да, закрыть</string>
+    <string name="No">Нет, продолжить</string>
+    <string name="Hybernate_apps">Перевести в спящий режим</string>
+    <string name="Hybernate_selected_apps.">Перевести выбранные приложения в спящий режим</string>
+    <string name="Rate_this_app">Оценить</string>
+    <string name="Your_support_is_our_best_motivation">Ваша поддержка - лучшая мотивация для нас!</string>
+    <string name="Please_rate_us">Выставить оценку</string>
+    <string name="Your_Android_can_work_faster_Optimize_its_speed">Устройство может работать быстрее. Оптимизируйте скорость</string>
+    <string name="Check">Проверить</string>
+    <string name="Boost_battery_live_in_one_tap">Экономьте заряд, усыпляя приложения одним нажатием</string>
+    <string name="Save_Battery">Экономия энергии</string>
+    <string name="Speed_up">Освободить</string>
+    <string name="delete">Удалить</string>
+    <string name="Congratulations_Memory_cleaned">Поздравляем! Память освобождена!</string>
+    <string name="Scanning">Сканирование</string>
+    <string name="SCAN_FOR_JUNK">Запустить проверку</string>
+    <string name="storage">Занято памяти</string>
+    <string name="clean_speed_up_and_optimize_your_android">Очистка, ускорение и оптимизация телефона</string>
     <string name="cleaned">Очистка мусора(<xliff:g id="memory">%1$s</xliff:g>)</string>
     <string name="empty_cache">Поздравляю! Память освобождена!</string>
     <string name="saving_battery">Поздравляю! Вы сэкономили заряд батареи!</string>
     <string name="scanning">Сканирование ...</string>
     <string name="scanning_m_of_n">Сканирование %1$d/%2$d</string>
-    <string name="software_top_text">Был установлен%1$sПрограммное обеспечение, занимающее место для хранения%2$s</string>
-    <string name="question">Вы точно хотите закрыть приложение?</string>
-    <string name="yes_i_want">Да, закрыть</string>
-    <string name="no">Нет, продолжить</string>
-    <string name="privacy_policy">Privacy Policy
+    <string name="software_top_text">Установлено %1$s приложений, занимающих %2$s МБ</string>
+    <string name="privacy_policy">
+Privacy Policy
 Effective date: September 26, 2018
 Your Master Cleaner ("us", "we", or "our") operates the website and the Your Master Cleaner mobile application (the "Service").
 This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. Our Privacy Policy for Your Master Cleaner is managed through Free Privacy Policy.
@@ -91,18 +128,4 @@ Contact Us
 If you have any questions about this Privacy Policy, please contact us:
 By email: am@balaganov.rocks</string>
 
-
-    <string name="category_other">другое</string>
-    <string name="category_def">Общая настройка </string>
-    <string name="settings_basic">Основные настройки</string>
-    <string name="category_advanced">Расширенные настройки</string>
-    <string name="settings_about">на</string>
-    <string name="settings_version_update">Обновить</string>
-    <string name="settings_grade">Дайте мне похвалу</string>
-    <string name="settings_share">Рекомендовать другу</string>
-
-    <string name="title_settings">устанавливать</string>
-    <string name="app_information">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;\
-        Эффективно быстро и точно очистите мобильный телефон от спама и ускорьте свой телефон. </string>
-    <string name="all_rights_reserved">Copyright © 2018 Dziuba. All Rights Reserved.</string>
 </resources>

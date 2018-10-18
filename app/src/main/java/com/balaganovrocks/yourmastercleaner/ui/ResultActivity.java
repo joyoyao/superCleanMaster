@@ -35,7 +35,8 @@ public class ResultActivity extends Activity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-        AdSize adSize = new AdSize(600, 500);
+        AdSize adSize = new AdSize(640, 100);
+        adSize.equals(AdSize.BANNER);
 
         mAdView.setAdListener(new AdListener() {
             @Override
@@ -86,7 +87,7 @@ public class ResultActivity extends Activity {
                     break;
                 case R.id.goto_rate_app:
                     Intent browserIntent = new
-                            Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/developer?id=DriftSimulatorGames"));
+                            Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com"));
                     startActivity(browserIntent);
                     break;
             }

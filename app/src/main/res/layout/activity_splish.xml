@@ -30,7 +30,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="169dp"
-        android:text="Your Master Cleaner"
+        android:text="@string/app_name"
         android:textColor="#b3ffffff"
         android:textSize="20sp" />
 
@@ -41,7 +41,7 @@
         android:layout_centerInParent="true"
         android:layout_gravity="center_vertical"
         android:gravity="center"
-        android:text="Очистка, ускорение и оптимизация телефона"
+        android:text="@string/clean_speed_up_and_optimize_your_android"
         android:textColor="#b3ffffff" />
 
     <TextView
@@ -72,7 +72,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="134dp"
         android:background="@drawable/start"
-        android:text="Старт" />
+        android:text="@string/start" />
 
 
 </RelativeLayout>
