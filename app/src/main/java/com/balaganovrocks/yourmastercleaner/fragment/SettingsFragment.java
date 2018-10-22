@@ -137,7 +137,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         intent.putExtra("duplicate", false);
         intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, BitmapFactory.decodeResource(getResources(), R.drawable.short_cut_icon));
         Intent i = new Intent();
-        i.setAction("com.yzy.shortcut");
+        i.setAction("com.balaganovrocks.shortcut");
         i.addCategory("android.intent.category.DEFAULT");
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, i);
         getActivity().sendBroadcast(intent);

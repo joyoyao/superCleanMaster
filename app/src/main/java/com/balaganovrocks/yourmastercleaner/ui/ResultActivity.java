@@ -35,7 +35,7 @@ public class ResultActivity extends Activity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-        AdSize adSize = new AdSize(640, 100);
+        AdSize adSize = new AdSize(300, 250);
         adSize.equals(AdSize.BANNER);
 
         mAdView.setAdListener(new AdListener() {
@@ -86,9 +86,9 @@ public class ResultActivity extends Activity {
                     startActivityForResult(intent2, 0); // do something
                     break;
                 case R.id.goto_rate_app:
-                    Intent browserIntent = new
-                            Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com"));
-                    startActivity(browserIntent);
+                  //  Intent browserIntent = new
+                  //          Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com"));
+                  //  startActivity(browserIntent);
                     break;
             }
 

@@ -3,13 +3,18 @@ android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompi
 android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
-
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
     defaultConfig {
         applicationId "com.balaganovrocks.yourmastercleaner"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 3
-        versionName "1.0"
+        versionCode 4
+        versionName "1.1"
     }
     buildTypes {
         release {

@@ -57,7 +57,7 @@ public class MainFragment extends BaseFragment {
     ArcProgress arcProcess;
     @InjectView(R.id.capacity)
     TextView capacity;
-
+    Button Rubish_clean;
     Context mContext;
     Button BtnSettigs;
     private Timer timer;
@@ -72,7 +72,7 @@ public class MainFragment extends BaseFragment {
 
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-
+        Rubish_clean = (Button) view.findViewById(R.id.Rubish_clean);
         ButterKnife.inject(this, view);
         mContext = getActivity();
         BtnSettigs = (Button) view.findViewById(R.id.btnSettings);
@@ -82,6 +82,15 @@ public class MainFragment extends BaseFragment {
             public void onClick(View v)
             {
                 Intent intent = new Intent(v.getContext(), settings.class);
+                startActivityForResult(intent, 0); // do something
+            }
+        });
+        Rubish_clean.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(v.getContext(), RubbishCleanActivity.class);
                 startActivityForResult(intent, 0); // do something
             }
         });

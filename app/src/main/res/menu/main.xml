@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.yzy.superclean.MainActivity" >
+    tools:context="com.balaganovrocks.yourmastercleaner.ui.MainActivity" >
 
     <item
         android:id="@+id/action_settings"

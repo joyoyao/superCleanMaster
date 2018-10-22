@@ -2,6 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">Your Master Cleaner</string>
+    <string name="short_cut_name">Your Master Cleaner</string>
     <string name="action_settings">Settings</string>
     <string name="drawer_open">drawer_open</string>
     <string name="drawer_close">drawer_close</string>
