@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.balaganovrocks.yourmastercleaner">
+    package="com.balaganovrocks.yourmasterclean">
 
     <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
@@ -31,13 +31,13 @@
         android:smallScreens="true" />
 
     <application
-        android:name="com.balaganovrocks.yourmastercleaner.ui.MyApp"
+        android:name="com.balaganovrocks.yourmasterclean.ui.MyApp"
         android:allowBackup="true"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
         android:theme="@style/MyAppTheme">
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.SplishActivity"
+            android:name="com.balaganovrocks.yourmasterclean.ui.SplishActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/TranslateThemeFull">
@@ -48,19 +48,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.MainActivity"
+            android:name="com.balaganovrocks.yourmasterclean.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/MyAppTheme" />
         <activity
-        android:name="com.balaganovrocks.yourmastercleaner.ui.BatterySavingActivity"
+        android:name="com.balaganovrocks.yourmasterclean.ui.BatterySavingActivity"
         android:label="@string/app_name"
         android:theme="@style/MyAppTheme" />
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.Privacy_Policy"
+            android:name="com.balaganovrocks.yourmasterclean.ui.Privacy_Policy"
             android:label="@string/app_name"
             android:theme="@style/MyAppTheme" />
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.ShortCutActivity"
+            android:name="com.balaganovrocks.yourmasterclean.ui.ShortCutActivity"
             android:excludeFromRecents="true"
             android:exported="true"
             android:label="@string/short_cut_name"
@@ -72,57 +72,57 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.MemoryCleanActivity"
+            android:name="com.balaganovrocks.yourmasterclean.ui.MemoryCleanActivity"
             android:label="@string/app_name"
             android:theme="@style/MyTranslucentAppTheme" />
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.ChangeLanguage"
+            android:name="com.balaganovrocks.yourmasterclean.ui.ChangeLanguage"
             android:label="@string/app_name"
             android:theme="@style/MyTranslucentAppTheme" />
 
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.settings"
+            android:name="com.balaganovrocks.yourmasterclean.ui.settings"
             android:label="Настройки"
             android:theme="@style/MyTranslucentAppTheme" />
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.Exit"
+            android:name="com.balaganovrocks.yourmasterclean.ui.Exit"
             android:label="Продолжить"
             android:theme="@style/MyTranslucentAppTheme" />
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.ResultActivity"
+            android:name="com.balaganovrocks.yourmasterclean.ui.ResultActivity"
             android:label=""
             android:theme="@style/MyTranslucentAppTheme" />
 
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.RubbishCleanActivity"
+            android:name="com.balaganovrocks.yourmasterclean.ui.RubbishCleanActivity"
             android:label="@string/app_name"
             android:theme="@style/MyTranslucentAppTheme" />
 
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.AutoStartManageActivity"
+            android:name="com.balaganovrocks.yourmasterclean.ui.AutoStartManageActivity"
             android:label="@string/app_name"
             android:theme="@style/MyTranslucentAppTheme" />
 
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.SoftwareManageActivity"
+            android:name="com.balaganovrocks.yourmasterclean.ui.SoftwareManageActivity"
             android:label="@string/app_software_manage"
             android:theme="@style/MyTranslucentAppTheme" />
 
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.base.FragmentContainerActivity"
+            android:name="com.balaganovrocks.yourmasterclean.base.FragmentContainerActivity"
             android:theme="@style/MyTranslucentAppTheme" />
         <activity
-            android:name="com.balaganovrocks.yourmastercleaner.ui.AboutActivity"
+            android:name="com.balaganovrocks.yourmasterclean.ui.AboutActivity"
             android:theme="@style/MyTranslucentAppTheme" />
 
         <service
-            android:name="com.balaganovrocks.yourmastercleaner.service.CleanerService"
+            android:name="com.balaganovrocks.yourmasterclean.service.CleanerService"
             android:exported="false" />
         <service
-            android:name="com.balaganovrocks.yourmastercleaner.service.CoreService"
+            android:name="com.balaganovrocks.yourmasterclean.service.CoreService"
             android:exported="false" />
 
-        <receiver android:name="com.balaganovrocks.yourmastercleaner.receiver.BootCompleteReceiver">
+        <receiver android:name="com.balaganovrocks.yourmasterclean.receiver.BootCompleteReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

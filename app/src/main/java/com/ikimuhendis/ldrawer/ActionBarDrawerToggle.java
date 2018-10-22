@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.balaganovrocks.yourmastercleaner.R;
+import com.balaganovrocks.yourmasterclean.R;
 
 import java.lang.reflect.Method;
 

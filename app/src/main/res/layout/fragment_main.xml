@@ -23,7 +23,7 @@
                 android:layout_height="150dp"
                 android:layout_centerVertical="true">
 
-                <com.balaganovrocks.yourmastercleaner.widget.circleprogress.ArcProgress
+                <com.balaganovrocks.yourmasterclean.widget.circleprogress.ArcProgress
                     android:id="@+id/arc_store"
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
@@ -48,7 +48,7 @@
                     android:textSize="8dip" />
             </RelativeLayout>
 
-            <com.balaganovrocks.yourmastercleaner.widget.circleprogress.ArcProgress
+            <com.balaganovrocks.yourmasterclean.widget.circleprogress.ArcProgress
                 android:id="@+id/arc_process"
                 android:layout_width="115dp"
                 android:layout_height="116dp"

@@ -10,7 +10,7 @@ android {
         abortOnError false
     }
     defaultConfig {
-        applicationId "com.balaganovrocks.yourmastercleaner"
+        applicationId "com.balaganovrocks.yourmasterclean"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 4
