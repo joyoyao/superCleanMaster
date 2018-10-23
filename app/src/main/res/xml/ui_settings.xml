@@ -28,11 +28,7 @@
         <Preference
             android:key="pVersion"
             android:title="e" />
-        <Preference
-            android:key="pGithub"
-            android:title="Github"
-            android:summary="github.com/joyoyao/superCleanMaster"
-            />
+
 
         <Preference
             android:key="pAbout"

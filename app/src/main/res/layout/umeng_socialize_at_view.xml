@@ -18,15 +18,6 @@
 		    android:layout_height="50dp"
 		    android:id="@+id/umeng_socialize_line_serach"
 		    android:background="#C4C4C4">
-		 <com.umeng.socialize.view.wigets.SearchBox
-            android:id="@+id/search_text"
-            style="@style/umeng_socialize_edit_padding"
-            android:layout_centerVertical="true"
-            android:paddingLeft="32dp"
-            android:hint="поиск"
-            android:textSize="14sp"
-            android:maxLength="8"
-            android:textColor="@color/umeng_socialize_list_item_textcolor" />
         <ImageView
             android:layout_width="17dp"
             android:layout_height="17dp"
@@ -35,23 +26,7 @@
             android:src="@drawable/umeng_socialize_search_icon" />
 		</RelativeLayout>
 
-        <com.umeng.socialize.view.wigets.SectionListView
-            android:id="@+id/listView"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:divider="#EEEEEE"
-            android:dividerHeight="1dp"
-            android:background="#FFFFFF"
-            android:layout_below="@id/umeng_socialize_line_serach" />
 
-        <com.umeng.socialize.view.wigets.SlideBar
-            android:id="@+id/slideBar"
-            android:layout_width="28dp"
-            android:layout_height="fill_parent"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/umeng_socialize_line_serach"
-            android:background="@drawable/umeng_socialize_sidebar_selector"
-            android:visibility="gone" />
 
         <RelativeLayout
             android:id="@+id/umeng_socialize_progress"
