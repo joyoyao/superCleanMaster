@@ -34,172 +34,172 @@ import butterknife.OnClick;
 public class AutoStartFragment extends BaseFragment {
 
 
-    Context mContext;
-    public static final int REFRESH_BT = 111;
-    private static final String ARG_POSITION = "position";
-    private int position; // 0:普通软件，2 系统软件
-    AutoStartAdapter mAutoStartAdapter;
+//   Context mContext;
+//   public static final int REFRESH_BT = 111;
+//   private static final String ARG_POSITION = "position";
+//   private int position; // 0:普通软件，2 系统软件
+//   AutoStartAdapter mAutoStartAdapter;
 
-    @InjectView(R.id.listview)
-    ListView listview;
+//   @InjectView(R.id.listview)
+//   ListView listview;
 
-    @InjectView(R.id.bottom_lin)
-    LinearLayout bottom_lin;
+//   @InjectView(R.id.bottom_lin)
+//   LinearLayout bottom_lin;
 
-    @InjectView(R.id.disable_button)
-    Button disableButton;
-    @InjectView(R.id.topText)
-    TextView topText;
-    List<AutoStartInfo> isSystemAuto = null;
-    List<AutoStartInfo> noSystemAuto = null;
-    private int canDisableCom;
-
-
-    private Handler mHandler = new Handler() {
+//   @InjectView(R.id.disable_button)
+//   Button disableButton;
+//   @InjectView(R.id.topText)
+//   TextView topText;
+//   List<AutoStartInfo> isSystemAuto = null;
+//   List<AutoStartInfo> noSystemAuto = null;
+//   private int canDisableCom;
 
 
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case REFRESH_BT:
-                    refeshButoom();
-
-                    break;
-            }
-        }
-    };
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        position = getArguments().getInt(ARG_POSITION);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater,
-                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
-
-        View view = inflater.inflate(R.layout.fragment_auto_start, container, false);
-        ButterKnife.inject(this, view);
-        mContext = getActivity();
-
-        return view;
-    }
+//   private Handler mHandler = new Handler() {
 
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+//       public void handleMessage(Message msg) {
+//           switch (msg.what) {
+//               case REFRESH_BT:
+//                   refeshButoom();
 
-        fillData();
-    }
+//                   break;
+//           }
+//       }
+//   };
 
-    @OnClick(R.id.disable_button)
-    public void onClickDisable() {
-      RootUtil.preparezlsu(mContext);
-       disableAPP();
+//   @Override
+//   public void onCreate(Bundle savedInstanceState) {
+//       super.onCreate(savedInstanceState);
 
-    }
+//       position = getArguments().getInt(ARG_POSITION);
+//   }
 
-    private void disableAPP() {
-        List<String> mSring = new ArrayList<>();
-        for (AutoStartInfo auto : noSystemAuto) {
-            if (auto.isEnable()) {
-                String packageReceiverList[] = auto.getPackageReceiver().toString().split(";");
-                for (int j = 0; j < packageReceiverList.length; j++) {
-                    String cmd = "pm disable " + packageReceiverList[j];
-                    //部分receiver包含$符号，需要做进一步处理，用"$"替换掉$
-                    cmd = cmd.replace("$", "\"" + "$" + "\"");
-                    //执行命令
-                    mSring.add(cmd);
-                }
-            }
-        }
+//   @Override
+//   public View onCreateView(LayoutInflater inflater,
+//                            @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+//       // TODO Auto-generated method stub
 
-        ShellUtils.CommandResult mCommandResult = ShellUtils.execCommand(mSring, true, true);
-        if (mCommandResult.result == 0) {
-            T.showLong(mContext,
-                    "Приложение полностью запрещено");
-            for (AutoStartInfo auto : noSystemAuto) {
-                if (auto.isEnable()) {
-                    auto.setEnable(false);
-                }
-            }
-            mAutoStartAdapter.notifyDataSetChanged();
-            refeshButoom();
-        } else {
-            T.showLong(mContext,
-                    "Эта функция должна получить разрешение системного корня, разрешить root-доступ.");
-        }
-    }
+//       View view = inflater.inflate(R.layout.fragment_auto_start, container, false);
+//       ButterKnife.inject(this, view);
+//       mContext = getActivity();
+
+//       return view;
+//   }
 
 
-    private void fillData() {
+//   @Override
+//   public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+//       super.onViewCreated(view, savedInstanceState);
 
-        if (position == 0) {
-            topText.setText("\n" +
-                    "Следующему программному обеспечению запрещается самозапуск,Улучшение скорости движения");
+//       fillData();
+//   }
 
-        } else {
-            topText.setText("\n" +
-                    "Запрещено запускаемое программное обеспечение для системного ядра,\n" +
-                    "Будет влиять на нормальное использование телефона,Пожалуйста, будьте осторожны");
+//   @OnClick(R.id.disable_button)
+//   public void onClickDisable() {
+//     RootUtil.preparezlsu(mContext);
+//      disableAPP();
 
-        }
+//   }
 
-        List<AutoStartInfo> mAutoStartInfo = BootStartUtils.fetchAutoApps(mContext);
+//   private void disableAPP() {
+//       List<String> mSring = new ArrayList<>();
+//       for (AutoStartInfo auto : noSystemAuto) {
+//           if (auto.isEnable()) {
+//               String packageReceiverList[] = auto.getPackageReceiver().toString().split(";");
+//               for (int j = 0; j < packageReceiverList.length; j++) {
+//                   String cmd = "pm disable " + packageReceiverList[j];
+//                   //部分receiver包含$符号，需要做进一步处理，用"$"替换掉$
+//                   cmd = cmd.replace("$", "\"" + "$" + "\"");
+//                   //执行命令
+//                   mSring.add(cmd);
+//               }
+//           }
+//       }
 
-        //   List<AutoStartInfo> mAutoStartInfo = BootStartUtils.fetchInstalledApps(mContext);
-        noSystemAuto = new ArrayList<>();
-        isSystemAuto = new ArrayList<>();
-
-        for (AutoStartInfo a : mAutoStartInfo) {
-            if (a.isSystem()) {
-
-                isSystemAuto.add(a);
-            } else {
-                noSystemAuto.add(a);
-            }
-        }
-
-        if (position == 0) {
-            mAutoStartAdapter = new AutoStartAdapter(mContext, noSystemAuto, mHandler);
-            listview.setAdapter(mAutoStartAdapter);
-            refeshButoom();
-        } else {
-
-            mAutoStartAdapter = new AutoStartAdapter(mContext, isSystemAuto, null);
-            listview.setAdapter(mAutoStartAdapter);
-
-        }
+//       ShellUtils.CommandResult mCommandResult = ShellUtils.execCommand(mSring, true, true);
+//       if (mCommandResult.result == 0) {
+//           T.showLong(mContext,
+//                   "Приложение полностью запрещено");
+//           for (AutoStartInfo auto : noSystemAuto) {
+//               if (auto.isEnable()) {
+//                   auto.setEnable(false);
+//               }
+//           }
+//           mAutoStartAdapter.notifyDataSetChanged();
+//           refeshButoom();
+//       } else {
+//           T.showLong(mContext,
+//                   "Эта функция должна получить разрешение системного корня, разрешить root-доступ.");
+//       }
+//   }
 
 
-    }
+//   private void fillData() {
 
-    private void refeshButoom() {
-        if (position == 0) {
-            canDisableCom = 0;
-            for (AutoStartInfo autoS : noSystemAuto) {
-                if (autoS.isEnable()) {
-                    canDisableCom++;
-                }
-            }
-            if (canDisableCom > 0) {
-                bottom_lin.setVisibility(View.VISIBLE);
-                disableButton.setText("Может быть оптимизирована" + canDisableCom + "\n" +
-                        "раздел");
-            } else {
-                bottom_lin.setVisibility(View.GONE);
-            }
-        }
+//       if (position == 0) {
+//           topText.setText("\n" +
+//                   "Следующему программному обеспечению запрещается самозапуск,Улучшение скорости движения");
 
-    }
+//       } else {
+//           topText.setText("\n" +
+//                   "Запрещено запускаемое программное обеспечение для системного ядра,\n" +
+//                   "Будет влиять на нормальное использование телефона,Пожалуйста, будьте осторожны");
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.reset(this);
-    }
+//       }
+
+//       List<AutoStartInfo> mAutoStartInfo = BootStartUtils.fetchAutoApps(mContext);
+
+//       //   List<AutoStartInfo> mAutoStartInfo = BootStartUtils.fetchInstalledApps(mContext);
+//       noSystemAuto = new ArrayList<>();
+//       isSystemAuto = new ArrayList<>();
+
+//       for (AutoStartInfo a : mAutoStartInfo) {
+//           if (a.isSystem()) {
+
+//               isSystemAuto.add(a);
+//           } else {
+//               noSystemAuto.add(a);
+//           }
+//       }
+
+//       if (position == 0) {
+//           mAutoStartAdapter = new AutoStartAdapter(mContext, noSystemAuto, mHandler);
+//           listview.setAdapter(mAutoStartAdapter);
+//           refeshButoom();
+//       } else {
+
+//           mAutoStartAdapter = new AutoStartAdapter(mContext, isSystemAuto, null);
+//           listview.setAdapter(mAutoStartAdapter);
+
+//       }
+
+
+//   }
+
+//   private void refeshButoom() {
+//       if (position == 0) {
+//           canDisableCom = 0;
+//           for (AutoStartInfo autoS : noSystemAuto) {
+//               if (autoS.isEnable()) {
+//                   canDisableCom++;
+//               }
+//           }
+//           if (canDisableCom > 0) {
+//               bottom_lin.setVisibility(View.VISIBLE);
+//               disableButton.setText("Может быть оптимизирована" + canDisableCom + "\n" +
+//                       "раздел");
+//           } else {
+//               bottom_lin.setVisibility(View.GONE);
+//           }
+//       }
+
+//   }
+
+//   @Override
+//   public void onDestroyView() {
+//       super.onDestroyView();
+//       ButterKnife.reset(this);
+//   }
 
 }

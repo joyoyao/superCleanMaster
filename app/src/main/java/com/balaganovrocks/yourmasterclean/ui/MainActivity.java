@@ -224,7 +224,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
             case 2:
 
                 closeDrawer();
-                SettingsFragment.launch(MainActivity.this);
+              //  SettingsFragment.launch(MainActivity.this);
                 break;
 
             // fragment = new SettingsFragment();

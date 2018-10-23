@@ -218,7 +218,7 @@ public class MainFragment extends BaseFragment {
        // notifications();
         startActivity(BatterySavingActivity.class);
         Log.d("proc", "save buttery init");
-        amKillProcess("com.balaganovrocks.yourmastercleaner");
+        amKillProcess("com.balaganovrocks.yourmasterclean");
 
 
     }
