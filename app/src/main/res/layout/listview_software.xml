@@ -43,13 +43,13 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="?android:attr/textColorSecondary"
             android:textAlignment="viewStart"
-            android:text="开机/后台自启"
+            android:text="Самозапуск загрузки / фона"
             android:layout_gravity="start"></TextView>
 
     </LinearLayout>
 
 
-    <com.yzy.supercleanmaster.views.RippleView
+    <com.balaganovrocks.yourmasterclean.views.RippleView
         android:id="@+id/riple_uninstall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,9 +66,9 @@
             android:layout_marginRight="5dp"
             android:background="@color/title_bg"
             android:gravity="center"
-            android:text="卸载"
+            android:text="@string/delete"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_middle" />
-    </com.yzy.supercleanmaster.views.RippleView>
+    </com.balaganovrocks.yourmasterclean.views.RippleView>
 </LinearLayout>
 

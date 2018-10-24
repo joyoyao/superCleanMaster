@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
-        android:text="使用已有账号发表评论"
+        android:text="Опубликовать комментарий, используя существующую учетную запись"
         android:textColor="#ffffff" />
 
     <LinearLayout
@@ -30,7 +30,7 @@
             android:layout_width="fill_parent"
             android:layout_height="38dp"
             android:background="@drawable/umeng_socialize_button_white_blue"
-            android:text="QQ空间"
+            android:text="Пространство QQ"
             android:textColor="#000000"
             android:textSize="14sp" />
 
@@ -39,7 +39,7 @@
             android:layout_width="fill_parent"
             android:layout_height="38dp"
             android:background="@drawable/umeng_socialize_button_white_blue"
-            android:text="腾讯微博"
+            android:text="Tencent Weibo"
             android:textColor="#000000"
             android:textSize="14sp" />
 
@@ -49,7 +49,7 @@
             android:layout_height="38dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/umeng_socialize_button_white_blue"
-            android:text="新浪微博"
+            android:text="Сина Вейбо"
             android:textColor="#000000"
             android:textSize="14sp" />
 
@@ -59,7 +59,7 @@
             android:layout_height="38dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/umeng_socialize_button_white_blue"
-            android:text="人人网"
+            android:text="Renren"
             android:textColor="#000000"
             android:textSize="14sp" />
 
@@ -69,7 +69,7 @@
             android:layout_height="38dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/umeng_socialize_button_white_blue"
-            android:text="豆瓣"
+            android:text="жеруха"
             android:textColor="#000000"
             android:textSize="14sp" />
 
@@ -79,7 +79,7 @@
             android:layout_height="38dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/umeng_socialize_button_white_blue"
-            android:text="匿名评论 	"
+            android:text="Анонимный комментарий	"
             android:textColor="#000000"
             android:textSize="14sp" />
 
@@ -89,7 +89,7 @@
             android:layout_height="38dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/umeng_socialize_button_grey_blue"
-            android:text="取消"
+            android:text="отменен"
             android:textColor="#000000"
             android:textSize="14sp" />
     </LinearLayout>

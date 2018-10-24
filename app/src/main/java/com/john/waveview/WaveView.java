@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.yzy.supercleanmaster.R;
+import com.balaganovrocks.yourmasterclean.R;
 
 
 /**

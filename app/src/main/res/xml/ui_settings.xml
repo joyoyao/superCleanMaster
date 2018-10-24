@@ -1,42 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="@string/category_def">
+    <PreferenceCategory android:title="a">
         <Preference
             android:key="createShortCut"
-            android:title="创建&quot;一键加速&quot;快捷方式" />
+            android:title="создать&quot;Однократное ускорение&quot;Ярлыки" />
         <SwitchPreference
             android:key="powerClear"
-            android:title="强力清理"
+            android:title="Сильная очистка"
             android:enabled="false"
-            android:summary="此功能需要root权限" />
+            android:summary="Эта функция требует root компетентность" />
 
     </PreferenceCategory>
 
 
-    <PreferenceCategory android:title="@string/category_other">
+    <PreferenceCategory android:title="b">
         <Preference
             android:key="pShare"
-            android:title="@string/settings_share" />
+            android:title="c" />
 
         <Preference
             android:key="pGrade"
-            android:title="@string/settings_grade" />
+            android:title="d" />
         <Preference
             android:key="pVersionDetail"
             android:title="版本信息" />
         <Preference
             android:key="pVersion"
-            android:title="@string/settings_version_update" />
-        <Preference
-            android:key="pGithub"
-            android:title="Github"
-            android:summary="github.com/joyoyao/superCleanMaster"
-            />
+            android:title="e" />
+
 
         <Preference
             android:key="pAbout"
-            android:title="@string/settings_about" />
+            android:title="f" />
     </PreferenceCategory>
 
 </PreferenceScreen>

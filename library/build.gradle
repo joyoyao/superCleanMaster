@@ -5,13 +5,19 @@ android {
         config {
         }
     }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    buildToolsVersion '27.0.3'
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.1"
     }
     buildTypes {
         release {
@@ -22,6 +28,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:recyclerview-v7:21.0.3'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:recyclerview-v7:21.0.3'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:support-v4:21.0.3'
 }

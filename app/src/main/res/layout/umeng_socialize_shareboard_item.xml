@@ -21,7 +21,7 @@
 	    android:layout_centerHorizontal="true"
 	    android:layout_marginLeft="2dp"
 	    android:layout_marginRight="2dp"
-	    android:text="QQ空间"
+	    android:text="Пространство QQ"
 	    android:singleLine="true"
 	    android:textSize="11sp"
 	    android:gravity="center"/>

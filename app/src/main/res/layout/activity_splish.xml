@@ -2,57 +2,77 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff">
+    android:background="#2B78E4">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/entrance3" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:background="@drawable/entrance_bottom_bg" />
 
-    <LinearLayout
-        android:layout_marginBottom="18dp"
-        android:layout_above="@+id/title"
-        android:layout_width="wrap_content"
 
-      android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/small_icon" />
-
-        <TextView
-            android:id="@+id/app_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="一键清理 开源版"
-            android:textColor="#b3ffffff"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="77dp"
+        android:src="@drawable/app_icon" />
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
+        android:id="@+id/app_name"
+        android:layout_width="197dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="169dp"
+        android:text="@string/app_name"
+        android:textColor="#b3ffffff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="143dp"
+        android:layout_height="63dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:text="@string/clean_speed_up_and_optimize_your_android"
+        android:textColor="#b3ffffff" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="17dp"
-        android:gravity="center_horizontal"
-        android:text="春光乍泄 © 堂堂炒栗子的"
-        android:textColor="#b3ffffff"
-        android:textSize="9sp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp"
+        android:text="Agree to the Privacy Policy and Terms of Service"
+        android:textColor="#b3ffffff" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:text="@ 2018 Your Master Cleaner"
+        android:textColor="#b3ffffff" />
+
+    <Button
+        android:id="@+id/start_main"
+        android:layout_width="149dp"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="134dp"
+        android:background="@drawable/start"
+        android:text="@string/start" />
+
 
 </RelativeLayout>

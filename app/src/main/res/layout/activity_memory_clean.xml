@@ -40,7 +40,7 @@
                 android:layout_centerInParent="true"
                 android:layout_height="wrap_content">
 
-                <com.yzy.supercleanmaster.widget.textcounter.CounterView
+                <com.balaganovrocks.yourmasterclean.widget.textcounter.CounterView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textCounter"
@@ -66,7 +66,7 @@
                     android:layout_below="@+id/sufix"
                     android:layout_width="wrap_content"
                     android:textColor="@color/white"
-                    android:text="可清理内存"
+                    android:text="@string/storage"
                     android:textSize="@dimen/text_size_middle"
                     android:layout_height="wrap_content" />
 
@@ -109,7 +109,7 @@
                 android:textSize="@dimen/text_size_large"
                 android:layout_width="match_parent"
                 android:gravity="center"
-                android:text="一键清理"
+                android:text="@string/Speed_up"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 

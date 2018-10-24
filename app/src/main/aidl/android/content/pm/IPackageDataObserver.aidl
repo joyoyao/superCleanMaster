@@ -23,6 +23,6 @@ package android.content.pm;
   * statistics related to code, data, cache usage(TODO) 
   * {@hide} 
   */ 
- oneway interface IPackageDataObserver { 
+  interface IPackageDataObserver {
      void onRemoveCompleted(in String packageName, boolean succeeded); 
  }

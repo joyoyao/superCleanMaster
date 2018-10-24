@@ -13,7 +13,7 @@
         <TextView
             android:id="@+id/topText"
             android:textColor="#787878"
-            android:text="非系统应用建议禁止"
+            android:text="Рекомендации по несистемному применению запрещены"
             android:layout_marginTop="@dimen/margin_right"
             android:layout_marginBottom="@dimen/margin_right"
             android:layout_marginLeft="@dimen/margin_left"
